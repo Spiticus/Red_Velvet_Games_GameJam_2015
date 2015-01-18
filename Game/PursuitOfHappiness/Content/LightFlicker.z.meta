@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "LightFlicker",
+		uint64 ResourceId = 546b2db149366d0c,
+	},
+},

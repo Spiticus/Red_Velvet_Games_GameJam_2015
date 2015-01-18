@@ -1,0 +1,8 @@
+FontContent = 
+{
+	FontBuilder = 
+	{
+		string Name = "motrg___",
+		uint64 ResourceId = 546b359c95d9ec98,
+	},
+},

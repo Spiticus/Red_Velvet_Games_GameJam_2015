@@ -1,0 +1,45 @@
+class ContextText : ZilchComponent
+{
+    var ContextString:String = "";
+    var DisplayString:String = "";
+    var StrPos:Integer = 0;
+    var HUDTextObject:Cog = null;
+    var Builder:StringBuilder = null;
+    [Property]
+    var Particle:Archetype = null;
+    function Initialize(init : CogInitializer)
+    {
+        this.Builder = new StringBuilder();
+        this.HUDTextObject = this.Owner.HudCreator.HudSpace.FindObjectByName("HUDText");
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+    function SetString(newString : String)
+    {
+        this.StrPos = 0;
+        this.DisplayString = "";
+        this.Builder = new StringBuilder();
+        this.ContextString = newString;
+        
+    }
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        //Testing
+        if(Zero.Keyboard.KeyIsPressed(Keys.Q))
+        {
+            this.SetString("Press Space to Use Elevator.");
+        }
+        //Update HUD
+        this.HUDTextObject.SpriteText.Text = this.DisplayString;
+        if(this.StrPos < this.ContextString.Count)
+        {
+            //The Meat
+            this.Builder.Write(this.ContextString.SubString(this.StrPos,1));
+            this.DisplayString = this.Builder.ToString();
+            this.HUDTextObject.Space.CreateAtPosition(this.Particle, this.HUDTextObject.Transform.WorldTranslation + 
+                Real3(this.HUDTextObject.SpriteText.MeasureText().X - 3,this.HUDTextObject.SpriteText.MeasureText().Y - 1, 2));
+        
+            this.StrPos += 1;
+
+        }
+    }
+}

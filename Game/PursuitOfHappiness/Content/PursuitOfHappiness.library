@@ -1,0 +1,7 @@
+ContentLibrary = 
+{
+	string Name = "PursuitOfHappiness",
+	uint64 LibraryId = 546ad07f559cb75c,
+	string SourceControlType = "",
+	bool ReadOnly = false,
+},

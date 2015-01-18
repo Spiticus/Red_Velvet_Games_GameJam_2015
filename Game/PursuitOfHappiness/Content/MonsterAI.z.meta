@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MonsterAI",
+		uint64 ResourceId = 546b2305d50f89f3,
+	},
+},

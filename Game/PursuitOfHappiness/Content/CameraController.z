@@ -1,0 +1,16 @@
+class CameraController : ZilchComponent
+{
+    var Target:Cog = null;
+    var ShakeOffset:Real3 = Real3(0,0,0);
+    function Initialize(init : CogInitializer)
+    {
+        this.Target = this.Space.FindObjectByName("Player");
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var wantedPos:Real3 = this.Target.Transform.WorldTranslation + this.ShakeOffset + Real3(0,7,20);
+        this.Owner.Transform.WorldTranslation = Math.Lerp(this.Owner.Transform.WorldTranslation, wantedPos, event.Dt * 4.0);
+    }
+}

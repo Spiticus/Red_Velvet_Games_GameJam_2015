@@ -1,0 +1,191 @@
+Level = 
+{
+	LevelSettings = 
+	{
+		LinkId = 
+		{
+			uint Id = 1,
+		},
+		Named = 
+		{
+			string Name = "LevelSettings",
+		},
+		GravityEffect = 
+		{
+			bool Active = true,
+			bool WakeUpOnChange = false,
+			bool LocalSpaceDirection = true,
+			float Strength = 10,
+			Vec3 Direction = [0, -1, 0],
+		},
+		DragEffect = 
+		{
+			bool Active = true,
+			bool WakeUpOnChange = false,
+			float Drag = 0.7,
+		},
+		CameraViewport = 
+		{
+			bool Background = false,
+			Vec2 Offset = [0, 0],
+			Vec2 Size = [1, 1],
+			int Layer = 0,
+			bool Active = true,
+			bool Blocking = true,
+			uint Renderer = 1,
+			uint Camera = 2,
+			ViewportScaling Scaling = Fill,
+			Vec2 Resolution = [1280, 720],
+			Vec4 MarginColor = [0, 0, 0, 0],
+		},
+		GridDraw = 
+		{
+			bool Active = true,
+			bool HalfCellOffset = false,
+			float CellSize = 1,
+			GridAxis Axis = YAxis,
+			int Lines = 100,
+			bool DrawAxisOrigins = true,
+			bool AlwaysDrawInEditor = true,
+			bool DrawInGame = false,
+			Vec4 GridColor = [0.5, 0.5, 0.5, 0.4],
+			Vec4 GridHiLight = [0, 0, 0, 0.4],
+			int HilightInterval = 10,
+			bool FollowEditorCamera = false,
+		},
+		DeferredRenderer = 
+		{
+			Vec4 ClearColor = [0, 0, 0, 0],
+			bool Hdr = true,
+			bool Glow = true,
+			bool RenderMasks = false,
+			bool ToneMapping = false,
+			float BrightThreshold = 0.2,
+			float Exposure = 0.5,
+			bool Refraction = true,
+			bool Shadows = true,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 3,
+		},
+		Named = 
+		{
+			string Name = "EditorCamera",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [3.48676, -6.65799, 17.7056],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [-0.0269211, -0.0470896, -0.00126958, 0.998527],
+		},
+		Camera = 
+		{
+			ProjectionMode ProjectionMode = Perspective,
+			Facing Facing = NegativeZ,
+			CameraTransparentSort TransparentSort = InheritFromSpace,
+			float FieldOfView = 45,
+			float NearPlane = 0.5,
+			float FarPlane = 500,
+			float Size = 20,
+		},
+		EditorCameraController = 
+		{
+			ControlMode ControlMode = Orbit,
+			float LookDistance = 16.6436,
+			float VerticalAngle = 0.0539086,
+			float HorizontalAngle = 0.0942483,
+			Vec3 LookTarget = [5.05079, -7.55479, 1.15989],
+			float MoveSensitivity = 1,
+		},
+		EditorRenderer = 
+		{
+			Vec4 ClearColor = [0.155, 0.155, 0.155, 1],
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 2,
+		},
+		Named = 
+		{
+			string Name = "Camera",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 58.2999],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Camera = 
+		{
+			ProjectionMode ProjectionMode = Orthographic,
+			Facing Facing = NegativeZ,
+			CameraTransparentSort TransparentSort = InheritFromSpace,
+			float FieldOfView = 45,
+			float NearPlane = 0.5,
+			float FarPlane = 5000,
+			float Size = 20,
+		},
+		Microphone = 
+		{
+			bool Active = true,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 4,
+		},
+		Named = 
+		{
+			string Name = "HUDText",
+		},
+		Archetyped = 
+		{
+			string Name = "546b0b1111bca3b7:HUDText",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, -8.50848, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		SpriteText = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			TextPositionMode Position = Centered,
+			string FontName = "546b359c95d9ec98:motrg___",
+			uint FontSize = 32,
+			string Text = "",
+			bool OnTop = true,
+			Vec2 Size = [0, 0],
+			TextAlign Align = Center,
+			float PixelsPerUnit = 37,
+			bool Smoothing = true,
+		},
+		Outliner = 
+		{
+			int ShadowCount = 16,
+			float SpreadPercent = 5,
+			Vec2 KnobOffsetPercent = [0, 0],
+			float ShadowDepth = -0.5,
+			float OffsetAngle = -45,
+			bool MatchOpacity = true,
+			Vec4 Color = [0.09, 0.00045, 0.00045, 0.96],
+			string KnobArchetype = "4de020863e84941e:Transform",
+			string TextArchetype = "1f33806740421259:SpriteText",
+		},
+	},
+},

@@ -1,0 +1,19 @@
+class LightFlicker : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var random = new Random();
+        if(random.DieRoll(3) > 1)
+        {
+            if(random.DieRoll(10) > 8)
+            {
+                this.Owner.Light.Visible = !this.Owner.Light.Visible;
+            }
+        }
+    }
+}

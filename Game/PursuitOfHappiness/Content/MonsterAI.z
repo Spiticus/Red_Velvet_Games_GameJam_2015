@@ -1,0 +1,29 @@
+class MonsterAI : ZilchComponent
+{
+    var Target:Cog = null;
+    function Initialize(init : CogInitializer)
+    {
+        this.Target = this.Space.FindObjectByName("Player");
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var inputVec:Real3 = Real3(0,0,0);
+        
+        var diffVec:Real3 = this.Target.Transform.WorldTranslation - this.Owner.Transform.WorldTranslation;
+        if(diffVec.X > 0)
+        {
+            inputVec += Real3(1,0,0);
+        }
+        if(diffVec.X < 0)
+        {
+            inputVec += Real3(-1,0,0);
+        }
+        if(Zero.Keyboard.KeyIsPressed(Keys.Up))
+        {
+            this.Owner.SweptController.Jump();
+        }
+        this.Owner.SweptController.Update(inputVec,event.Dt * 0.5);
+    }
+}

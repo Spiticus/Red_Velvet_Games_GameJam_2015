@@ -1,0 +1,26 @@
+class InputController : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var inputVec:Real3 = Real3(0,0,0);
+        
+        if(Zero.Keyboard.KeyIsDown(Keys.Left))
+        {
+            inputVec += Real3(-1,0,0);
+        }
+        if(Zero.Keyboard.KeyIsDown(Keys.Right))
+        {
+            inputVec += Real3(1,0,0);
+        }
+        if(Zero.Keyboard.KeyIsPressed(Keys.Up))
+        {
+            this.Owner.SweptController.Jump();
+        }
+        this.Owner.SweptController.Update(inputVec,event.Dt);
+    }
+}
