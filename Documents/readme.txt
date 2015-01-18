@@ -1,9 +1,9 @@
-Pursuit of the Stars README
+Pursue the Moon README
 
 *********************
    Red Velvet Games
 	   presents
-Pursuit of the Stars
+Pursue the Moon
 *********************
 
 Created and Designed by:
@@ -17,6 +17,13 @@ REQUIREMENTS
 Windows OS (XP or higher)
 Keyboard
 Discrete Graphics Card
+Powerful Computer
+
+***********
+   NOTE
+***********
+- DO NOT mash on the Space Bar or Enter Key
+- This Game Requires a Fast Computer
 
 ***********
 HOW TO PLAY
@@ -37,3 +44,13 @@ HOW TO PLAY
   card to access that floor. Key cards have been known to float idly
   in hallways when they wish to be found.
   
+***********
+  GUIDE
+***********
+1. Blue Elevator to 5
+2. Red Elevator to 7
+3. Orange Elevator to 9
+4. Purple Elevator to 8
+5. Get Green Key Card
+6. Green Elevator to 10
+7. Gold Elevator to the Moon!
