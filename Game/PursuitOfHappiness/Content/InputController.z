@@ -7,6 +7,7 @@ class InputController : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        Zero.Mouse.Cursor = -1;
         var inputVec:Real3 = Real3(0,0,0);
         if(this.Owner.PlayerController.Cutscene == false && this.Owner.PlayerController.InElevator == false)
         {
@@ -20,6 +21,7 @@ class InputController : ZilchComponent
             }
             if(Zero.Keyboard.KeyIsPressed(Keys.Up))
             {
+                
                 this.Owner.SweptController.Jump();
             }
         }

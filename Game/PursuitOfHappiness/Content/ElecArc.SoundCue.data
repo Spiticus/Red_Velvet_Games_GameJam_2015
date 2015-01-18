@@ -1,12 +1,12 @@
 SoundCue = 
 {
 	SoundPlayMode PlayMode = Single,
-	float Volume = 0.2,
+	float Volume = 0.08,
 	float VolumeVariation = 0,
 	float Pitch = 0,
 	float PitchVariation = 0.2,
 	float MinDistance = 1,
-	float MaxDistance = 40,
+	float MaxDistance = 20,
 	float PositionRandomization = 0,
 	uint MaxPlaybacks = 10,
 	int Priority = 128,

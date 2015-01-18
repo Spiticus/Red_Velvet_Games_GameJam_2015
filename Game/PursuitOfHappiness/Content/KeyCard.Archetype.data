@@ -1,0 +1,95 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "KeyCard",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [0, 0, 0],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	Hierarchy = 
+	{
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 2,
+			},
+			Named = 
+			{
+				string Name = "KeyCardPart",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-0.1176, 0.0005, 0.0681152],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546c278d7f867c49:KeyCard.KeyCardPart",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 3,
+			},
+			Named = 
+			{
+				string Name = "KeySymbol",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-0.323523, 3.04272, -0.200057],
+				Vec3 Scale = [1, 2.12579, 1],
+				Quat Rotation = [0.707107, 8.32558e-010, -8.32558e-010, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546c278d7f867c51:KeyCard.KeySymbol",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 4,
+			},
+			Named = 
+			{
+				string Name = "KeyMagStrip",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-0.1176, 0.0005, 0.0681152],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546c278d7f867c54:KeyCard.KeyMagStrip",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+	},
+},

@@ -4,6 +4,12 @@ class CameraController : ZilchComponent
     var Player:Cog = null;
     var ShakeOffset:Real3 = Real3(0,0,0);
     var ZoomLerp:Real = 20;
+    var ZoomAdd:Real = 0;
+    var Ended:Boolean = false;
+    var Fin:Boolean = false;
+    var Credits:Boolean = false;
+    var MusicClose:Boolean = false;
+    var MusicEnd:Boolean = false;
     function Initialize(init : CogInitializer)
     {
         this.Player = this.Space.FindObjectByName("Player");
@@ -26,8 +32,59 @@ class CameraController : ZilchComponent
             wantedZoom = 25;
             wantedPos = this.Target.Transform.WorldTranslation + this.ShakeOffset + Real3(0,4,this.ZoomLerp);
         }
+        if(this.Player.PlayerController.InElevator && this.Player.PlayerController.NearestElevator.ElevatorBehavior.ElevatorMoving == true
+        && this.Player.PlayerController.NearestElevator.Name == "YellowElevator")
+        {
+            wantedZoom = 25 + this.ZoomAdd;
+            wantedPos = this.Target.Transform.WorldTranslation + this.ShakeOffset + Real3(0,4 + (this.ZoomAdd/5),this.ZoomLerp);
+            if(this.ZoomAdd < 100)
+            {
+                this.ZoomAdd += 0.3;
+            }
+            if(this.Player.Transform.WorldTranslation.Y > 100 && this.MusicEnd == false)
+            {
+                this.Space.FindObjectByName("NormalMusic").SoundEmitter.Stop();
+                this.Space.FindObjectByName("FinalMusic").SoundEmitter.Play();
+                this.MusicEnd = true;
+            }
+            if(this.Player.Transform.WorldTranslation.Y > 400 && this.Ended == false)
+            {
+                this.LevelSettings.HudCreator.HudSpace.CreateAtPosition(Archetype.Find("WhiteOutEnd"), Real3(0,0,0.2));
+                this.Ended = true;
+            }
+            if(this.Player.Transform.WorldTranslation.Y > 500 && this.Fin == false)
+            {
+                this.LevelSettings.HudCreator.HudSpace.CreateAtPosition(Archetype.Find("FinText"), Real3(0,0,2));
+                this.Fin = true;
+            }
+            if(this.Player.Transform.WorldTranslation.Y > 570 && this.Credits == false)
+            {
+                this.LevelSettings.HudCreator.HudSpace.CreateAtPosition(Archetype.Find("CreditsText"), Real3(0,3,2));
+                this.Credits = true;
+            }
+            if(this.Player.Transform.WorldTranslation.Y > 660 )
+            {
+                this.Space.ReloadLevel();
+            }
+            this.LevelSettings.ContextText.Hide();
+        }
+        if(this.Player.Transform.WorldTranslation.Y > 80 && this.MusicClose == false)
+        {
+            this.Space.FindObjectByName("NormalMusic").SoundEmitter.Play();
+            this.MusicClose = true;
+        }
         this.ZoomLerp = Math.Lerp(this.ZoomLerp, wantedZoom, event.Dt);
         this.Owner.Transform.WorldTranslation = Math.Lerp(this.Owner.Transform.WorldTranslation, wantedPos, event.Dt * 4.0);
+        if(this.MusicClose == true)
+        {
+            var normMusic = this.Owner.FindChildByName("NormalMusic").SoundEmitter;
+            normMusic.Volume = Math.Lerp(normMusic.Volume, 0.8, event.Dt * 0.5);
+        }
+        if(this.MusicEnd == true)
+        {
+            var finalMusic = this.Owner.FindChildByName("FinalMusic").SoundEmitter;
+            finalMusic.Volume = Math.Lerp(finalMusic.Volume, 0.8, event.Dt);
+        }
     }
     
     function CameraShake(amount : Real)

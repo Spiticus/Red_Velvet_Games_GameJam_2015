@@ -1,0 +1,37 @@
+GeometryContent = 
+{
+	GeneratedArchetype = 
+	{
+		uint64 ResourceId = 546c278b7fef78b7,
+	},
+	GeometryImport = 
+	{
+		bool ChangeWinding = false,
+		Vec3 Translation = [0, 0, 0],
+		Quat Rotation = [0, 0, 0, 1],
+		Vec3 Scale = [0.1, 0.1, 0.1],
+	},
+	MeshBuilder = 
+	{
+		Array Meshes = 
+		[
+			{
+				string Name = "KeyCard.KeyCardPart",
+				uint64 ResourceId = 546c278d7f867c49,
+			},
+			{
+				string Name = "KeyCard.KeySymbol",
+				uint64 ResourceId = 546c278d7f867c51,
+			},
+			{
+				string Name = "KeyCard.KeyMagStrip",
+				uint64 ResourceId = 546c278d7f867c54,
+			},
+		],
+		MeshMode MeshMode = Multi,
+		ResourceCompression CompressMesh = None,
+		Generation Normals = Import,
+		Generation Tangents = Import,
+		float SmoothingAngle = 60,
+	},
+},

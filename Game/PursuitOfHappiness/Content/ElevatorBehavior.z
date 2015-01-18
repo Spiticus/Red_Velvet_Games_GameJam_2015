@@ -127,6 +127,10 @@ class ElevatorBehavior : ZilchComponent
     function GotoFloor(floor : Integer)
     {
         this.DestinationFloor = floor;
+        if(this.Player.PlayerController.InElevator && this.Owner.Name == "YellowElevator")
+        {
+            this.DestinationFloor = 100;
+        }
         this.StartTrans = this.Owner.Transform.WorldTranslation;
         var seqA = Action.Sequence(this.Owner.Actions);
         if(this.CurrentDoor != null && this.CurrentDoor.DoorManager.Open)

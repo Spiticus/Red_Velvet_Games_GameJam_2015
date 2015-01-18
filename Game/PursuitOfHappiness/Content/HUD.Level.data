@@ -78,9 +78,9 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [3.79271, 1.5521, 100.059],
+			Vec3 Translation = [5.34507, 11.698, 100.137],
 			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0.00184362, -0.00261825, 4.82712e-006, 0.999995],
+			Quat Rotation = [-0.0243298, 0.0183187, 0.000445897, 0.999536],
 		},
 		Camera = 
 		{
@@ -90,15 +90,15 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 14.8164,
+			float Size = 24.4281,
 		},
 		EditorCameraController = 
 		{
 			ControlMode ControlMode = Orbit,
 			float LookDistance = 100.688,
-			float VerticalAngle = -0.00368726,
-			float HorizontalAngle = 0.00523647,
-			Vec3 LookTarget = [4.31996, 1.92336, -0.627201],
+			float VerticalAngle = 0.0486726,
+			float HorizontalAngle = -0.0366503,
+			Vec3 LookTarget = [1.66002, 6.79918, -0.363956],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -204,7 +204,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [16.2525, 8.44713, 0],
+			Vec3 Translation = [15.4154, 8.44713, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -237,6 +237,107 @@ Level =
 			Vec4 Color = [0.09, 0.00045, 0.00045, 0.96],
 			string KnobArchetype = "4de020863e84941e:Transform",
 			string TextArchetype = "1f33806740421259:SpriteText",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 6,
+		},
+		Named = 
+		{
+			string Name = "IntroText",
+		},
+		Archetyped = 
+		{
+			string Name = "546c39f7393bc9b0:IntroText",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 4, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		SpriteText = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			TextPositionMode Position = Centered,
+			string FontName = "546b359c95d9ec98:motrg___",
+			uint FontSize = 80,
+			string Text = "Pursue the moon.",
+			bool OnTop = true,
+			Vec2 Size = [0, 0],
+			TextAlign Align = Center,
+			float PixelsPerUnit = 37,
+			bool Smoothing = true,
+		},
+		Outliner = 
+		{
+			int ShadowCount = 16,
+			float SpreadPercent = 5,
+			Vec2 KnobOffsetPercent = [0, 0],
+			float ShadowDepth = -0.5,
+			float OffsetAngle = -45,
+			bool MatchOpacity = true,
+			Vec4 Color = [0.09, 0.00045, 0.00045, 0.96],
+			string KnobArchetype = "4de020863e84941e:Transform",
+			string TextArchetype = "1f33806740421259:SpriteText",
+		},
+		TextFadeOut = 
+		{
+		},
+		TimedDeath = 
+		{
+			float Lifetime = 5,
+			bool SendsDeathEvent = true,
+			bool AutoDestroy = true,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 7,
+		},
+		Named = 
+		{
+			string Name = "HUDDamage",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, -0.365407],
+			Vec3 Scale = [1.5, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			Vec4 Color = [1, 1, 1, 0],
+			BlendMode BlendMode = Additive,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "546c098d25a795a0:tex_DamageHud",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool OnTop = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		SinTranslate = 
+		{
+			float SinSpeedX = 5,
+			float SinSpeedY = 0,
+			float Intensity = 1,
+			bool UseInitialRot = false,
 		},
 	},
 },

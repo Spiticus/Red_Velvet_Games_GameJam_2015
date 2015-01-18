@@ -44,27 +44,63 @@ class ElevatorVolume : ZilchComponent
     {
         if(event.OtherObject.Name == "Player")
         {
-            if(this.Doors.Cog.DoorManager.Open == true)
+            if(this.Player.PlayerController.HasGreenKey && this.Elevator.Cog.Name == "GreenElevator")
             {
-                if(this.TextStarted == false)
+                if(this.Doors.Cog.DoorManager.Open == true)
                 {
-                    this.LevelSettings.ContextText.SetString("Press Space to Get In Elevator.");
-                    this.TextStarted = true;
+                    if(this.TextStarted == false)
+                    {
+                        this.LevelSettings.ContextText.SetString("Press Space to Get In Elevator.");
+                        this.TextStarted = true;
+                    }
+                    if(Zero.Keyboard.KeyIsPressed(Keys.Space) && this.Player.PlayerController.InElevator == false)
+                    {
+                        Console.WriteLine("Enter Elevator");
+                        this.Player.PlayerController.NearestElevator = this.Elevator.Cog;
+                        this.Player.PlayerController.NearestDoor = this.Doors.Cog;
+                        this.Player.PlayerController.EnterElevator();
+                        this.TextStarted = false;
+                    }
                 }
-                if(Zero.Keyboard.KeyIsPressed(Keys.Space) && this.Player.PlayerController.InElevator == false)
+                if(Zero.Keyboard.KeyIsPressed(Keys.Space)  && this.Player.PlayerController.InElevator == false )
                 {
-                    Console.WriteLine("Enter Elevator");
-                    this.Player.PlayerController.NearestElevator = this.Elevator.Cog;
-                    this.Player.PlayerController.NearestDoor = this.Doors.Cog;
-                    this.Player.PlayerController.EnterElevator();
-                    this.TextStarted = false;
+                    if(this.Doors.Cog.DoorManager.Open == false)
+                    {
+                        this.Elevator.Cog.ElevatorBehavior.GotoFloor(this.CurrentFloor);
+                    }
                 }
             }
-            if(Zero.Keyboard.KeyIsPressed(Keys.Space)  && this.Player.PlayerController.InElevator == false )
+            else if(this.Elevator.Cog.Name == "GreenElevator" && Zero.Keyboard.KeyIsPressed(Keys.Space) && this.Player.PlayerController.HasGreenKey == false)
             {
-                if(this.Doors.Cog.DoorManager.Open == false)
+                if(this.LevelSettings.HudCreator.HudSpace.FindObjectByName("GreenText") == null)
                 {
-                    this.Elevator.Cog.ElevatorBehavior.GotoFloor(this.CurrentFloor);
+                    this.LevelSettings.HudCreator.HudSpace.CreateAtPosition(Archetype.Find("GreenText"), Real3(0,5,0));
+                }
+            }
+            if(this.Elevator.Cog.Name != "GreenElevator")
+            {
+                if(this.Doors.Cog.DoorManager.Open == true)
+                {
+                    if(this.TextStarted == false)
+                    {
+                        this.LevelSettings.ContextText.SetString("Press Space to Get In Elevator.");
+                        this.TextStarted = true;
+                    }
+                    if(Zero.Keyboard.KeyIsPressed(Keys.Space) && this.Player.PlayerController.InElevator == false)
+                    {
+                        Console.WriteLine("Enter Elevator");
+                        this.Player.PlayerController.NearestElevator = this.Elevator.Cog;
+                        this.Player.PlayerController.NearestDoor = this.Doors.Cog;
+                        this.Player.PlayerController.EnterElevator();
+                        this.TextStarted = false;
+                    }
+                }
+                if(Zero.Keyboard.KeyIsPressed(Keys.Space)  && this.Player.PlayerController.InElevator == false )
+                {
+                    if(this.Doors.Cog.DoorManager.Open == false)
+                    {
+                        this.Elevator.Cog.ElevatorBehavior.GotoFloor(this.CurrentFloor);
+                    }
                 }
             }
         }

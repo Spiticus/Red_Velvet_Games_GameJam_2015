@@ -22,8 +22,8 @@ class MonsterAI : ZilchComponent
         }
         if(Zero.Keyboard.KeyIsPressed(Keys.Up))
         {
-            this.Owner.SweptController.Jump();
+            //this.Owner.SweptController.Jump();
         }
-        this.Owner.SweptController.Update(inputVec,event.Dt * 0.5);
+        this.Owner.SweptController.Update(inputVec,event.Dt);
     }
 }

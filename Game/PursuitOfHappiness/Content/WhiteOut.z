@@ -1,0 +1,18 @@
+class WhiteOut : ZilchComponent
+{
+    var Timer:Integer = 0;
+    function Initialize(init : CogInitializer)
+    {
+        this.Owner.Sprite.Color = Real4(1,1,1,0);
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Timer += 1;
+        if(this.Timer > 30)
+        {
+            this.Owner.Sprite.Color = Math.Lerp(this.Owner.Sprite.Color, Real4(1,1,1,1), event.Dt * 0.2);
+        }
+    }
+}

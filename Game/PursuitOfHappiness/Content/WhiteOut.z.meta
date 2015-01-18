@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "WhiteOut",
+		uint64 ResourceId = 546c3196beccee52,
+	},
+},

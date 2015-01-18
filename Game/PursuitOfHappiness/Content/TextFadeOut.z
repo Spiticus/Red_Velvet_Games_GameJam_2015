@@ -1,0 +1,17 @@
+class TextFadeOut : ZilchComponent
+{
+    var Timer:Integer = 0;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Timer += 1;
+        if(this.Timer > 120)
+        {
+            this.Owner.SpriteText.Color = Math.Lerp(this.Owner.SpriteText.Color, Real4(0,0,0,0), event.Dt);
+        }
+    }
+}

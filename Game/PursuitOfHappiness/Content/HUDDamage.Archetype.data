@@ -1,0 +1,41 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "HUDDamage",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [0, 0, -0.365407],
+		Vec3 Scale = [1.5, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	Sprite = 
+	{
+		bool Visible = true,
+		bool VisibilityCulling = true,
+		Vec4 Color = [1, 1, 1, 0.665],
+		BlendMode BlendMode = Additive,
+		SpriteGeometryMode GeometryMode = ZPlane,
+		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		string SpriteSource = "546c098d25a795a0:tex_DamageHud",
+		bool RenderMask = false,
+		bool FlipX = false,
+		bool FlipY = false,
+		bool OnTop = false,
+		bool AnimationActive = true,
+		float AnimationSpeed = 1,
+		uint StartFrame = 0,
+	},
+	SinTranslate = 
+	{
+		float SinSpeedX = 5,
+		float SinSpeedY = 0,
+		float Intensity = 1,
+		bool UseInitialRot = false,
+	},
+},

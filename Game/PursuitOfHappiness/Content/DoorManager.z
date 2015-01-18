@@ -46,8 +46,10 @@ class DoorManager : ZilchComponent
     
     function DoorOpen()
     {
+        Console.WriteLine("PRE-OPEN DEBUG");
         if(!this.Open)
         {
+            Console.WriteLine("OPEN DEBUG");
             // Create an Action Sequence attach to this object
             var seqA = Action.Sequence(this.Owner.Actions);
             var seqB = Action.Sequence(this.Owner.Actions);
@@ -77,6 +79,7 @@ class DoorManager : ZilchComponent
     {
         if(!this.Open)
         {
+            Console.WriteLine("EXIT DEBUG");
             // Create an Action Sequence attach to this object
             var seqA = Action.Sequence(this.Owner.Actions);
             var seqB = Action.Sequence(this.Owner.Actions);

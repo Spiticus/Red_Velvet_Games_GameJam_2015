@@ -3,25 +3,48 @@ class PlayerController : ZilchComponent
     [Property]
     var CurrentFloor:Integer = 1;
     var HUDFloorObject:Cog = null;
+    var HUDDamage:Cog = null;
     var RideElevator:Boolean = false;
     var LeavingElevator:Boolean = false;
     var InElevator:Boolean = false;
     var Cutscene:Boolean = false;
     var Health:Real = 100;
+    var TrueHealth:Real = 100;
     var InitTrans:Real3 = Real3(0,0,0);
     var StartTrans:Real3 = Real3(0,0,0);
     var NearestElevator:Cog = null;
     var NearestDoor:Cog = null;
+    var HasGreenKey:Boolean = false;
+    var Timer:Integer = 0;
     function Initialize(init : CogInitializer)
     {
         this.HUDFloorObject = this.LevelSettings.HudCreator.HudSpace.FindObjectByName("FloorText");
+        this.HUDDamage = this.LevelSettings.HudCreator.HudSpace.FindObjectByName("HUDDamage");
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
-    }
+        Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollisionPersisted);
 
+    }
+    function OnCollisionPersisted(event : CollisionEvent)
+    {
+        if(event.OtherObject.Name == "HurtZone")
+        {
+            if(this.Health > 1.5)
+            {
+                this.Health -= 1.2;
+                this.LevelSettings.CameraViewport.Camera.CameraController.CameraShake(4.0);
+                var random = new Random();
+                if(random.Range(0,100) > 95)
+                {
+                    this.Space.SoundSpace.PlayCue(SoundCue.Find("Hurt"));
+                }
+            }
+        }
+        
+    }
     function OnLogicUpdate(event : UpdateEvent)
     {
         //Use Elevator
-        if(this.InElevator && Zero.Keyboard.KeyIsPressed(Keys.Enter) && !this.NearestDoor.DoorManager.Open)
+        if(this.InElevator && Zero.Keyboard.KeyIsPressed(Keys.Enter) && !this.NearestDoor.DoorManager.Open && !this.NearestElevator.ElevatorBehavior.ElevatorMoving)
         {
             this.UseElevator();
         }
@@ -42,10 +65,31 @@ class PlayerController : ZilchComponent
         {
             this.HUDFloorObject.SpriteText.Text = "F`this.CurrentFloor`";
         }
-        if(this.Health < 100)
+        this.HUDDamage.Sprite.Color = Real4(1,1,1,1-(this.Health/100.0));
+        if(this.Health < 99)
         {
-            this.Health += 1.0;
+            this.Health += 0.9;
         }
+        if(this.Health < 2)
+        {
+            this.TrueHealth -= 5.0;
+        }
+        if(this.TrueHealth < 0)
+        {
+            if(this.LevelSettings.HudCreator.HudSpace.FindObjectByName("GameOver") == null)
+            {
+                this.LevelSettings.HudCreator.HudSpace.CreateAtPosition(Archetype.Find("WhiteOutEnd"), Real3(0,0,0.2));
+                this.LevelSettings.HudCreator.HudSpace.CreateAtPosition(Archetype.Find("GameOver"), Real3(0,5,5));
+            }
+            this.Timer += 1;
+            this.HUDDamage.Sprite.Color = Real4(1,1,1,1);
+            this.Cutscene = true;
+        }
+        if(this.Timer == 350)
+        {
+            this.Space.ReloadLevel();
+        }
+        
     }
     function EnterElevator()
     {
