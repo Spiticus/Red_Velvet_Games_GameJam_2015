@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "ElevatorVolume",
+		uint64 ResourceId = 546b6ba7cbf764ad,
+	},
+},

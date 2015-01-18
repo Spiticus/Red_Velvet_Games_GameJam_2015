@@ -1,0 +1,320 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "LightIndicator",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [0, 0, 0],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	Hierarchy = 
+	{
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 2,
+			},
+			Named = 
+			{
+				string Name = "LightB",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397abd:LightIndicator.LightB",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 3,
+			},
+			Named = 
+			{
+				string Name = "Light1",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397ac3:LightIndicator.Light1",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 4,
+			},
+			Named = 
+			{
+				string Name = "Light2",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397ac4:LightIndicator.Light2",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 5,
+			},
+			Named = 
+			{
+				string Name = "Light3",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397ac6:LightIndicator.Light3",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 6,
+			},
+			Named = 
+			{
+				string Name = "Light4",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397ac8:LightIndicator.Light4",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 7,
+			},
+			Named = 
+			{
+				string Name = "Light5",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397aca:LightIndicator.Light5",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 8,
+			},
+			Named = 
+			{
+				string Name = "Light6",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397acc:LightIndicator.Light6",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 9,
+			},
+			Named = 
+			{
+				string Name = "Light7",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397acd:LightIndicator.Light7",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 10,
+			},
+			Named = 
+			{
+				string Name = "Light8",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397acf:LightIndicator.Light8",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 11,
+			},
+			Named = 
+			{
+				string Name = "Light9",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397ad1:LightIndicator.Light9",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 12,
+			},
+			Named = 
+			{
+				string Name = "Light10",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397ad5:LightIndicator.Light10",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 13,
+			},
+			Named = 
+			{
+				string Name = "LightR",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546b0732ab397ad7:LightIndicator.LightR",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+	},
+},

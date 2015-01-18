@@ -1,0 +1,47 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "ElevatorLight",
+	},
+	Archetyped = 
+	{
+		string Name = "546b29b412c7ca6b:FlickerLight",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [0.0315924, 4.37836, -0.190471],
+		Vec3 Scale = [0.179198, 0.22975, 0.1],
+		Quat Rotation = [0.990082, 0, 0, -0.140488],
+	},
+	Light = 
+	{
+		bool Visible = true,
+		bool VisibilityCulling = true,
+		LightType LightType = Point,
+		Vec4 Color = [0.945, 0.889481, 0.722925, 1],
+		float Intensity = 0.97,
+		float Range = 15,
+		float Falloff = 0.35,
+		float Angle = 129,
+		float Size = 20,
+	},
+	Shadow = 
+	{
+		Quality Quality = MediumQuality,
+		ShadowType ShadowType = Esm,
+		bool SoftShadows = true,
+		uint Splits = 1,
+		uint CurrentSplit = 0,
+		float PaddingScaler = 0.3,
+		Vec4 Color = [0, 0, 0, 1],
+		bool Active = true,
+	},
+	LightFlicker = 
+	{
+	},
+},

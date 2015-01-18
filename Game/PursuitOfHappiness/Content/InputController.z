@@ -8,18 +8,20 @@ class InputController : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         var inputVec:Real3 = Real3(0,0,0);
-        
-        if(Zero.Keyboard.KeyIsDown(Keys.Left))
+        if(this.Owner.PlayerController.Cutscene == false && this.Owner.PlayerController.InElevator == false)
         {
-            inputVec += Real3(-1,0,0);
-        }
-        if(Zero.Keyboard.KeyIsDown(Keys.Right))
-        {
-            inputVec += Real3(1,0,0);
-        }
-        if(Zero.Keyboard.KeyIsPressed(Keys.Up))
-        {
-            this.Owner.SweptController.Jump();
+            if(Zero.Keyboard.KeyIsDown(Keys.Left))
+            {
+                inputVec += Real3(-1,0,0);
+            }
+            if(Zero.Keyboard.KeyIsDown(Keys.Right))
+            {
+                inputVec += Real3(1,0,0);
+            }
+            if(Zero.Keyboard.KeyIsPressed(Keys.Up))
+            {
+                this.Owner.SweptController.Jump();
+            }
         }
         this.Owner.SweptController.Update(inputVec,event.Dt);
     }

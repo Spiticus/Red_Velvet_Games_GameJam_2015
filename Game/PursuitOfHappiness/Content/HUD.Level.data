@@ -78,27 +78,27 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [3.48676, -6.65799, 17.7056],
+			Vec3 Translation = [3.79271, 1.5521, 100.059],
 			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [-0.0269211, -0.0470896, -0.00126958, 0.998527],
+			Quat Rotation = [0.00184362, -0.00261825, 4.82712e-006, 0.999995],
 		},
 		Camera = 
 		{
-			ProjectionMode ProjectionMode = Perspective,
+			ProjectionMode ProjectionMode = Orthographic,
 			Facing Facing = NegativeZ,
 			CameraTransparentSort TransparentSort = InheritFromSpace,
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 20,
+			float Size = 14.8164,
 		},
 		EditorCameraController = 
 		{
 			ControlMode ControlMode = Orbit,
-			float LookDistance = 16.6436,
-			float VerticalAngle = 0.0539086,
-			float HorizontalAngle = 0.0942483,
-			Vec3 LookTarget = [5.05079, -7.55479, 1.15989],
+			float LookDistance = 100.688,
+			float VerticalAngle = -0.00368726,
+			float HorizontalAngle = 0.00523647,
+			Vec3 LookTarget = [4.31996, 1.92336, -0.627201],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -169,6 +169,57 @@ Level =
 			string FontName = "546b359c95d9ec98:motrg___",
 			uint FontSize = 32,
 			string Text = "",
+			bool OnTop = true,
+			Vec2 Size = [0, 0],
+			TextAlign Align = Center,
+			float PixelsPerUnit = 37,
+			bool Smoothing = true,
+		},
+		Outliner = 
+		{
+			int ShadowCount = 16,
+			float SpreadPercent = 5,
+			Vec2 KnobOffsetPercent = [0, 0],
+			float ShadowDepth = -0.5,
+			float OffsetAngle = -45,
+			bool MatchOpacity = true,
+			Vec4 Color = [0.09, 0.00045, 0.00045, 0.96],
+			string KnobArchetype = "4de020863e84941e:Transform",
+			string TextArchetype = "1f33806740421259:SpriteText",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 5,
+		},
+		Named = 
+		{
+			string Name = "FloorText",
+		},
+		Archetyped = 
+		{
+			string Name = "546b0b1111bca3b7:HUDText",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [16.2525, 8.44713, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		SpriteText = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			TextPositionMode Position = Centered,
+			string FontName = "546b359c95d9ec98:motrg___",
+			uint FontSize = 80,
+			string Text = "F1",
 			bool OnTop = true,
 			Vec2 Size = [0, 0],
 			TextAlign Align = Center,

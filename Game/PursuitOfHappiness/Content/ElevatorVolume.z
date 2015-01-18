@@ -1,0 +1,72 @@
+class ElevatorVolume : ZilchComponent
+{
+    [Property]
+    var CurrentFloor:Integer = 1;
+    [Property]
+    var Elevator:CogPath = null;
+    [Property]
+    var Doors:CogPath = null;
+
+    var Player:Cog = null;
+    var ElevatorArrived:Boolean = true;
+    var TextStarted:Boolean = false;
+    function Initialize(init : CogInitializer)
+    {
+        this.Player = this.Space.FindObjectByName("Player");
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        Zero.Connect(this.Owner, Events.CollisionEnded, this.OnCollisionEnded);
+        Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollisionPersisted);
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(event.OtherObject.Name == "Player")
+        {
+            if(this.Doors.Cog.DoorManager.Open == false)
+            {
+                this.LevelSettings.ContextText.SetString("Press Space to Call Elevator.");
+            }
+            else
+            {
+                this.LevelSettings.ContextText.SetString("Press Space to Enter Elevator.");
+            }
+        }
+    }
+    function OnCollisionEnded(event : CollisionEvent)
+    {
+        if(event.OtherObject.Name == "Player")
+        {
+            this.LevelSettings.ContextText.Hide();
+        }
+    }
+    
+    function OnCollisionPersisted(event : CollisionEvent)
+    {
+        if(event.OtherObject.Name == "Player")
+        {
+            if(this.Doors.Cog.DoorManager.Open == true)
+            {
+                if(this.TextStarted == false)
+                {
+                    this.LevelSettings.ContextText.SetString("Press Space to Enter Elevator.");
+                    this.TextStarted = true;
+                }
+                if(Zero.Keyboard.KeyIsPressed(Keys.Space))
+                {
+                    Console.WriteLine("Enter Elevator");
+                    this.Player.PlayerController.NearestElevator = this.Elevator.Cog;
+                    this.Player.PlayerController.NearestDoor = this.Doors.Cog;
+                    this.Player.PlayerController.EnterElevator();
+                    this.TextStarted = false;
+                }
+            }
+            if(Zero.Keyboard.KeyIsPressed(Keys.Space))
+            {
+                if(this.Doors.Cog.DoorManager.Open == false)
+                {
+                    this.Elevator.Cog.ElevatorBehavior.GotoFloor(this.CurrentFloor);
+                }
+            }
+        }
+    }
+}
