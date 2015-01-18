@@ -42,11 +42,6 @@ class ContextText : ZilchComponent
     }
     function OnLogicUpdate(event : UpdateEvent)
     {
-        //Testing
-        if(Zero.Keyboard.KeyIsPressed(Keys.Q))
-        {
-            this.SetString("Press Space to Use Elevator.");
-        }
         //Update HUD
         this.HUDTextObject.SpriteText.Text = this.DisplayString;
         if(this.StrPos < this.ContextString.Count)

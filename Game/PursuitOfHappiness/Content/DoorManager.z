@@ -2,6 +2,8 @@ class DoorManager : ZilchComponent
 {
     [Property]
     var Volume:CogPath = null;
+    [Property]
+    var Reverse:Boolean = false;
     var Player:Cog = null;
     var ChildDoor:Cog = null;
     var Timer:Integer = 0;
@@ -32,6 +34,14 @@ class DoorManager : ZilchComponent
         }
     */
         this.Timer += 1;
+        if(this.Volume.Cog.ElevatorVolume.Elevator.Cog.ElevatorBehavior.LocatorMode == true)
+        {
+            this.Owner.SoundEmitter.Volume = 0;
+        }
+        else
+        {
+            this.Owner.SoundEmitter.Volume = 1;
+        }
     }
     
     function DoorOpen()
@@ -43,11 +53,22 @@ class DoorManager : ZilchComponent
             var seqB = Action.Sequence(this.Owner.Actions);
             var seqC = Action.Sequence(this.Owner.Actions);
             // OpenDoor
-            this.Space.SoundSpace.PlayCueAt(SoundCue.Find("DoorOpen"), this.Owner.Transform.WorldTranslation);
+            if(this.Volume.Cog.ElevatorVolume.Elevator.Cog.ElevatorBehavior.LocatorMode == false)
+            {
+                this.Space.SoundSpace.PlayCueAt(SoundCue.Find("DoorOpen"), this.Owner.Transform.WorldTranslation);
+            }
             Action.Delay(seqC, 0.33);
             Action.Call(seqC, this.Owner.SoundEmitter.Play);
-            Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(-3, 0, 0), 1.0, Ease.Linear);
-            Action.Property(seqB, @this.ChildDoor.Transform.WorldTranslation, this.InitTransChild + Real3(-6, 0, 0), 1.0, Ease.Linear);
+            if(this.Reverse == true)
+            {
+                Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(3, 0, 0), 1.0, Ease.Linear);
+                Action.Property(seqB, @this.ChildDoor.Transform.WorldTranslation, this.InitTransChild + Real3(6, 0, 0), 1.0, Ease.Linear);
+            }
+            else
+            {
+                Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(-3, 0, 0), 1.0, Ease.Linear);
+                Action.Property(seqB, @this.ChildDoor.Transform.WorldTranslation, this.InitTransChild + Real3(-6, 0, 0), 1.0, Ease.Linear);
+            }
             Action.Property(seqB, @this.Open, true, 0.0, Ease.Linear);
             Action.Property(seqB, @this.Volume.Cog.ElevatorVolume.ElevatorArrived, true, 0.0, Ease.Linear);
         }
@@ -61,7 +82,10 @@ class DoorManager : ZilchComponent
             var seqB = Action.Sequence(this.Owner.Actions);
             var seqC = Action.Sequence(this.Owner.Actions);
             // OpenDoor
-            this.Space.SoundSpace.PlayCueAt(SoundCue.Find("DoorOpen"), this.Owner.Transform.WorldTranslation);
+            if(this.Volume.Cog.ElevatorVolume.Elevator.Cog.ElevatorBehavior.LocatorMode == false)
+            {
+                this.Space.SoundSpace.PlayCueAt(SoundCue.Find("DoorOpen"), this.Owner.Transform.WorldTranslation);
+            }
             Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(-3, 0, 0), 1.0, Ease.Linear);
             Action.Property(seqB, @this.ChildDoor.Transform.WorldTranslation, this.InitTransChild + Real3(-6, 0, 0), 1.0, Ease.Linear);
             Action.Property(seqB, @this.Open, true, 0.0, Ease.Linear);
@@ -79,7 +103,10 @@ class DoorManager : ZilchComponent
             // OpenDoor
             Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans, 1.0, Ease.Linear);
             Action.Property(seqB, @this.Volume.Cog.ElevatorVolume.ElevatorArrived, false, 0.0, Ease.Linear);
-            Action.Call(seqB, this.PlaySoundCue);
+            if(this.Volume.Cog.ElevatorVolume.Elevator.Cog.ElevatorBehavior.LocatorMode == false)
+            {
+                Action.Call(seqB, this.PlaySoundCue);
+            }
             Action.Property(seqB, @this.ChildDoor.Transform.WorldTranslation, this.InitTransChild, 1.0, Ease.Linear);
             Action.Property(seqB, @this.Open, false, 0.0, Ease.Linear);
             if(this.Player.PlayerController.Cutscene == true)

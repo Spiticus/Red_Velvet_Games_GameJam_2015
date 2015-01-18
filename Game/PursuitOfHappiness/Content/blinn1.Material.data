@@ -2,11 +2,8 @@ Material =
 {
 	Phong = 
 	{
-		float SpecularExponent = 128,
-		float SpecularScalar = 1,
-	},
-	ModulateModelColor = 
-	{
+		float SpecularExponent = 16,
+		float SpecularScalar = 0.25,
 	},
 	TextureDiffuse = 
 	{

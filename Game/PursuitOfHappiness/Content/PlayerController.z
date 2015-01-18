@@ -4,6 +4,7 @@ class PlayerController : ZilchComponent
     var CurrentFloor:Integer = 1;
     var HUDFloorObject:Cog = null;
     var RideElevator:Boolean = false;
+    var LeavingElevator:Boolean = false;
     var InElevator:Boolean = false;
     var Cutscene:Boolean = false;
     var Health:Real = 100;
@@ -20,16 +21,27 @@ class PlayerController : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         //Use Elevator
-        if(this.InElevator && Zero.Keyboard.KeyIsPressed(Keys.Enter))
+        if(this.InElevator && Zero.Keyboard.KeyIsPressed(Keys.Enter) && !this.NearestDoor.DoorManager.Open)
         {
             this.UseElevator();
         }
         //Exit Elevator
-        if(this.InElevator && Zero.Keyboard.KeyIsPressed(Keys.Space))
+        if(this.InElevator && Zero.Keyboard.KeyIsPressed(Keys.Space) && !this.NearestElevator.ElevatorBehavior.ElevatorMoving)
         {
             this.NearestDoor.DoorManager.DoorOpenExit();
         }
-        this.HUDFloorObject.SpriteText.Text = "F`this.CurrentFloor`";
+        if(this.CurrentFloor == 11)
+        {
+            this.HUDFloorObject.SpriteText.Text = "R";
+        }
+        else if(this.CurrentFloor == 0)
+        {
+            this.HUDFloorObject.SpriteText.Text = "B";
+        }
+        else
+        {
+            this.HUDFloorObject.SpriteText.Text = "F`this.CurrentFloor`";
+        }
         if(this.Health < 100)
         {
             this.Health += 1.0;
@@ -41,7 +53,7 @@ class PlayerController : ZilchComponent
         this.StartTrans = this.Owner.Transform.WorldTranslation;
         var seqA = Action.Sequence(this.Owner.Actions);
         Action.Property(seqA, @this.Cutscene, true, 0.0, Ease.Linear);
-        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.NearestElevator.Transform.WorldTranslation + Real3(0, 1, -2), 1.0, Ease.Linear);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.NearestElevator.Transform.WorldTranslation + Real3(0, 1, -3), 1.0, Ease.Linear);
         Action.Call(seqA, this.NearestDoor.DoorManager.DoorClose);
         Action.Property(seqA, @this.InElevator, true, 0.0, Ease.Linear);
         Action.Property(seqA, @this.Cutscene, false, 0.0, Ease.Linear);
@@ -53,9 +65,11 @@ class PlayerController : ZilchComponent
         this.StartTrans = this.Owner.Transform.WorldTranslation;
         var seqA = Action.Sequence(this.Owner.Actions);
         Action.Property(seqA, @this.Cutscene, true, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.LeavingElevator, true, 0.0, Ease.Linear);
         Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.NearestElevator.Transform.WorldTranslation + Real3(0, 1, 11.29063), 1.0, Ease.Linear);
         Action.Property(seqA, @this.InElevator, false, 0.0, Ease.Linear);
         Action.Call(seqA, this.NearestDoor.DoorManager.DoorClose);
+        Action.Property(seqA, @this.LeavingElevator, false, 0.0, Ease.Linear);
         Action.Property(seqA, @this.Cutscene, false, 0.0, Ease.Linear);
     }
     function AbortElevator()
@@ -64,8 +78,10 @@ class PlayerController : ZilchComponent
         this.StartTrans = this.Owner.Transform.WorldTranslation;
         var seqA = Action.Sequence(this.Owner.Actions);
         Action.Property(seqA, @this.Cutscene, true, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.LeavingElevator, true, 0.0, Ease.Linear);
         Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.NearestElevator.Transform.WorldTranslation + Real3(0, 1, 11.29063), 1.0, Ease.Linear);
         Action.Property(seqA, @this.InElevator, false, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.LeavingElevator, false, 0.0, Ease.Linear);
         Action.Property(seqA, @this.Cutscene, false, 0.0, Ease.Linear);
     }
     function UseElevator()

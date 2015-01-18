@@ -1,0 +1,221 @@
+GeometryContent = 
+{
+	GeneratedArchetype = 
+	{
+		uint64 ResourceId = 546bbeacfa80c92d,
+	},
+	GeometryImport = 
+	{
+		bool ChangeWinding = false,
+		Vec3 Translation = [0, 0, 0],
+		Quat Rotation = [0, 0, 0, 1],
+		Vec3 Scale = [1, 1, 1],
+	},
+	MeshBuilder = 
+	{
+		Array Meshes = 
+		[
+			{
+				string Name = "Happiness_HotelRedux.WeddingBanner",
+				uint64 ResourceId = 546bbed1f9e3d5a1,
+			},
+			{
+				string Name = "Happiness_HotelRedux.TweenFloors",
+				uint64 ResourceId = 546bbed1f9e3d5a9,
+			},
+			{
+				string Name = "Happiness_HotelRedux.Building1",
+				uint64 ResourceId = 546bbed1f9e3d5ac,
+			},
+			{
+				string Name = "Happiness_HotelRedux.FireEscapes",
+				uint64 ResourceId = 546bbed1f9e3d5af,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame010",
+				uint64 ResourceId = 546bbed1f9e3d5b2,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame015",
+				uint64 ResourceId = 546bbed1f9e3d5b5,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame011",
+				uint64 ResourceId = 546bbed1f9e3d5b8,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame012",
+				uint64 ResourceId = 546bbed1f9e3d5ba,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame013",
+				uint64 ResourceId = 546bbed1f9e3d5bd,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame004",
+				uint64 ResourceId = 546bbed1f9e3d5bf,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame008",
+				uint64 ResourceId = 546bbed1f9e3d5c2,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame026",
+				uint64 ResourceId = 546bbed1f9e3d5c5,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame017",
+				uint64 ResourceId = 546bbed1f9e3d5c7,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame020",
+				uint64 ResourceId = 546bbed1f9e3d5ca,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame018",
+				uint64 ResourceId = 546bbed1f9e3d5cc,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame019",
+				uint64 ResourceId = 546bbed1f9e3d5cf,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame021",
+				uint64 ResourceId = 546bbed1f9e3d5d1,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame022",
+				uint64 ResourceId = 546bbed1f9e3d5d4,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame016",
+				uint64 ResourceId = 546bbed1f9e3d5d6,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame023",
+				uint64 ResourceId = 546bbed1f9e3d5d9,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame025",
+				uint64 ResourceId = 546bbed1f9e3d5db,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame024",
+				uint64 ResourceId = 546bbed1f9e3d5de,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame027",
+				uint64 ResourceId = 546bbed1f9e3d5e0,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame009",
+				uint64 ResourceId = 546bbed1f9e3d5e3,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame005",
+				uint64 ResourceId = 546bbed1f9e3d5e5,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame006",
+				uint64 ResourceId = 546bbed1f9e3d5e8,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame002",
+				uint64 ResourceId = 546bbed1f9e3d5ea,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame014",
+				uint64 ResourceId = 546bbed1f9e3d5ed,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame001",
+				uint64 ResourceId = 546bbed1f9e3d5ef,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame003",
+				uint64 ResourceId = 546bbed1f9e3d5f2,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame028",
+				uint64 ResourceId = 546bbed1f9e3d5f4,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitSign001",
+				uint64 ResourceId = 546bbed1f9e3d5f7,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor001",
+				uint64 ResourceId = 546bbed1f9e3d5fa,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame029",
+				uint64 ResourceId = 546bbed1f9e3d5fc,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor002",
+				uint64 ResourceId = 546bbed1f9e3d5ff,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame030",
+				uint64 ResourceId = 546bbed1f9e3d601,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor003",
+				uint64 ResourceId = 546bbed1f9e3d604,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame031",
+				uint64 ResourceId = 546bbed1f9e3d606,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor004",
+				uint64 ResourceId = 546bbed1f9e3d60e,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame032",
+				uint64 ResourceId = 546bbed1f9e3d610,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor005",
+				uint64 ResourceId = 546bbed1f9e3d613,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame033",
+				uint64 ResourceId = 546bbed1f9e3d616,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor006",
+				uint64 ResourceId = 546bbed1f9e3d618,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame034",
+				uint64 ResourceId = 546bbed1f9e3d61b,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor007",
+				uint64 ResourceId = 546bbed1f9e3d61e,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame035",
+				uint64 ResourceId = 546bbed1f9e3d621,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor008",
+				uint64 ResourceId = 546bbed1f9e3d623,
+			},
+			{
+				string Name = "Happiness_HotelRedux.DoorFrame036",
+				uint64 ResourceId = 546bbed1f9e3d626,
+			},
+			{
+				string Name = "Happiness_HotelRedux.ExitDoor009",
+				uint64 ResourceId = 546bbed1f9e3d628,
+			},
+		],
+		MeshMode MeshMode = Multi,
+		ResourceCompression CompressMesh = None,
+		Generation Normals = Import,
+		Generation Tangents = Import,
+		float SmoothingAngle = 60,
+	},
+},

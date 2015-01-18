@@ -1,0 +1,33 @@
+MultiMaterial = 
+{
+	MultiMaterialBlock = 
+	{
+		Array Materials = 
+		[
+			{
+				string MaterialName = "546baeee1fd37201:lambert1",
+			},
+			{
+				string MaterialName = "546baeee1fd3b2f0:lambert5",
+			},
+			{
+				string MaterialName = "546baeee1fd3cce0:lambert2",
+			},
+			{
+				string MaterialName = "546baeee1fd3e6c1:lambert7",
+			},
+			{
+				string MaterialName = "546baeee1fd00237:lambert6",
+			},
+			{
+				string MaterialName = "546baeee1fd020b2:lambert8",
+			},
+			{
+				string MaterialName = "546baeee1fd03aa4:lambert3",
+			},
+			{
+				string MaterialName = "546baeee1fd0549c:lambert4",
+			},
+		],
+	},
+},
