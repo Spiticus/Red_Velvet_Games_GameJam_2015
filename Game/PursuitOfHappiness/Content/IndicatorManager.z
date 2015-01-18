@@ -47,7 +47,8 @@ class IndicatorManager : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        var selectionMode:Boolean = this.Player.PlayerController.InElevator == true && this.Elevator.Cog.ElevatorBehavior.ElevatorMoving == false;
+        var selectionMode:Boolean = this.Player.PlayerController.InElevator == true && this.Elevator.Cog.ElevatorBehavior.ElevatorMoving == false && 
+        this.Player.PlayerController.NearestElevator == this.Elevator.Cog && this.Player.PlayerController.LeavingElevator == false;
         this.CurrentFloor = this.Elevator.Cog.ElevatorBehavior.CurrentFloor;
         /*if(Zero.Keyboard.KeyIsPressed(Keys.PageUp))
         {
@@ -218,7 +219,7 @@ class IndicatorManager : ZilchComponent
         
         if(this.PreviousFloor != this.CurrentFloor)
         {
-            if(this.FirstDing == false)
+            if(this.FirstDing == false && this.Elevator.Cog.ElevatorBehavior.LocatorMode == false)
             {
                 this.Owner.SoundEmitter.Pitch = 1.0 + ((this.CurrentFloor as Real) * 0.02);
                 this.Owner.SoundEmitter.Play();

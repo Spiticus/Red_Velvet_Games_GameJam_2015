@@ -1,0 +1,1949 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "Happiness_HotelReduxB",
+	},
+	Archetyped = 
+	{
+		string Name = "546bbeacfa80c92d:Happiness_HotelRedux",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [7.59531, -0.69355, -3.25092],
+		Vec3 Scale = [0.597902, 0.515, 0.699062],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	Hierarchy = 
+	{
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 2,
+			},
+			Named = 
+			{
+				string Name = "WeddingBanner",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-10.0663, 11.8521, -1.10844],
+				Vec3 Scale = [5.21977, 5.21977, 5.21977],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546baeee1fd35510:Happiness_HotelWeddingBannerMulti",
+				string MeshName = "546bbed1f9e3d5a1:Happiness_HotelRedux.WeddingBanner",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 3,
+			},
+			Named = 
+			{
+				string Name = "TweenFloors",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-13.8344, -0.356838, 11.462],
+				Vec3 Scale = [5.21977, 5.21977, 5.21977],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546bbed4f910bc0e:02___Default",
+				string MeshName = "546bbed1f9e3d5a9:Happiness_HotelRedux.TweenFloors",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 4,
+			},
+			Named = 
+			{
+				string Name = "Building1",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-13.8344, -0.356838, -1.59391],
+				Vec3 Scale = [5.21977, 5.21977, 5.21977],
+				Quat Rotation = [0.707107, 0, 0, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d5ac:Happiness_HotelRedux.Building1",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 5,
+			},
+			Named = 
+			{
+				string Name = "FireEscapes",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [52.5105, 9.40082, 3.93663],
+				Vec3 Scale = [5.21977, 5.21977, 5.21977],
+				Quat Rotation = [0.707107, 4.32978e-017, -4.32978e-017, 0.707107],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546bbed4f91e32c4:01___Default",
+				string MeshName = "546bbed1f9e3d5af:Happiness_HotelRedux.FireEscapes",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 6,
+			},
+			Named = 
+			{
+				string Name = "Door009",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [19.6359, 153.106, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 7,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame010",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5b2:Happiness_HotelRedux.DoorFrame010",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 8,
+			},
+			Named = 
+			{
+				string Name = "Door014",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-31.9957, 80.4587, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 9,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame015",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5b5:Happiness_HotelRedux.DoorFrame015",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 10,
+			},
+			Named = 
+			{
+				string Name = "Door010",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [37.6187, 153.106, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 11,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame011",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5b8:Happiness_HotelRedux.DoorFrame011",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 12,
+			},
+			Named = 
+			{
+				string Name = "Door011",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-20.5701, 153.106, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 13,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame012",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5ba:Happiness_HotelRedux.DoorFrame012",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 14,
+			},
+			Named = 
+			{
+				string Name = "Door012",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-56.9798, 135.847, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 15,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame013",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5bd:Happiness_HotelRedux.DoorFrame013",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 16,
+			},
+			Named = 
+			{
+				string Name = "Door003",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [21.8795, 98.9304, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 17,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame004",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5bf:Happiness_HotelRedux.DoorFrame004",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 18,
+			},
+			Named = 
+			{
+				string Name = "Door007",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [19.6359, 135.847, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 19,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame008",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5c2:Happiness_HotelRedux.DoorFrame008",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 20,
+			},
+			Named = 
+			{
+				string Name = "Door025",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [18.1932, 6.97158, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 21,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame026",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5c5:Happiness_HotelRedux.DoorFrame026",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 22,
+			},
+			Named = 
+			{
+				string Name = "Door016",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [15.5006, 62.0702, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 23,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame017",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5c7:Happiness_HotelRedux.DoorFrame017",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 24,
+			},
+			Named = 
+			{
+				string Name = "Door019",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-31.3121, 44.2193, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 25,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame020",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5ca:Happiness_HotelRedux.DoorFrame020",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 26,
+			},
+			Named = 
+			{
+				string Name = "Door017",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [4.15734, 44.2193, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 27,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame018",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5cc:Happiness_HotelRedux.DoorFrame018",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 28,
+			},
+			Named = 
+			{
+				string Name = "Door018",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [28.0798, 44.2193, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 29,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame019",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5cf:Happiness_HotelRedux.DoorFrame019",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 30,
+			},
+			Named = 
+			{
+				string Name = "Door020",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [4.15734, 25.2124, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 31,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame021",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5d1:Happiness_HotelRedux.DoorFrame021",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 32,
+			},
+			Named = 
+			{
+				string Name = "Door021",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [28.0798, 25.2124, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 33,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame022",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5d4:Happiness_HotelRedux.DoorFrame022",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 34,
+			},
+			Named = 
+			{
+				string Name = "Door015",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [29.7177, 62.0702, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 35,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame016",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5d6:Happiness_HotelRedux.DoorFrame016",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 36,
+			},
+			Named = 
+			{
+				string Name = "Door022",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-31.3121, 25.2124, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 37,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame023",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5d9:Happiness_HotelRedux.DoorFrame023",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 38,
+			},
+			Named = 
+			{
+				string Name = "Door024",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [29.7177, -11.0361, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 39,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame025",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5db:Happiness_HotelRedux.DoorFrame025",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 40,
+			},
+			Named = 
+			{
+				string Name = "Door023",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [15.5006, -11.0361, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 41,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame024",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5de:Happiness_HotelRedux.DoorFrame024",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 42,
+			},
+			Named = 
+			{
+				string Name = "Door026",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-26.1215, -11.0361, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 43,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame027",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5e0:Happiness_HotelRedux.DoorFrame027",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 44,
+			},
+			Named = 
+			{
+				string Name = "Door008",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [37.6187, 135.847, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 45,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame009",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5e3:Happiness_HotelRedux.DoorFrame009",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 46,
+			},
+			Named = 
+			{
+				string Name = "Door004",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-35.1321, 98.9304, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 47,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame005",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5e5:Happiness_HotelRedux.DoorFrame005",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 48,
+			},
+			Named = 
+			{
+				string Name = "Door005",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-35.1321, 98.9304, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 49,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame006",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5e8:Happiness_HotelRedux.DoorFrame006",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 50,
+			},
+			Named = 
+			{
+				string Name = "Door001",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-35.3006, 117.275, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 51,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame002",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5ea:Happiness_HotelRedux.DoorFrame002",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 52,
+			},
+			Named = 
+			{
+				string Name = "Door013",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [15.6338, 80.4587, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 53,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame014",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5ed:Happiness_HotelRedux.DoorFrame014",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 54,
+			},
+			Named = 
+			{
+				string Name = "Door",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-52.6517, 117.275, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 55,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame001",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5ef:Happiness_HotelRedux.DoorFrame001",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 56,
+			},
+			Named = 
+			{
+				string Name = "Door002",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [25.2667, 117.275, -1.36862],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 57,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame003",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191572],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "4de020863e85bb61:DefaultMaterial",
+						string MeshName = "546bbed1f9e3d5f2:Happiness_HotelRedux.DoorFrame003",
+						Vec4 Color = [1, 1, 1, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 58,
+			},
+			Named = 
+			{
+				string Name = "Door027",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 80.4587, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 59,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame028",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d5f4:Happiness_HotelRedux.DoorFrame028",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 60,
+			},
+			Named = 
+			{
+				string Name = "ExitSign001",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.3884, 87.1101, 4.73789],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "4de020863e85bb61:DefaultMaterial",
+				string MeshName = "546bbed1f9e3d5f7:Happiness_HotelRedux.ExitSign001",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 61,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor001",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 80.0357, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d5fa:Happiness_HotelRedux.ExitDoor001",
+				Vec4 Color = [0.905, 0.3801, 0.3801, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 62,
+			},
+			Named = 
+			{
+				string Name = "Door028",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 98.6698, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 63,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame029",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d5fc:Happiness_HotelRedux.DoorFrame029",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 64,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor002",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 98.2468, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d5ff:Happiness_HotelRedux.ExitDoor002",
+				Vec4 Color = [0.905, 0.3801, 0.3801, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 65,
+			},
+			Named = 
+			{
+				string Name = "Door029",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 117.137, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 66,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame030",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d601:Happiness_HotelRedux.DoorFrame030",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 67,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor003",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 116.714, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d604:Happiness_HotelRedux.ExitDoor003",
+				Vec4 Color = [0.905, 0.3801, 0.3801, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 68,
+			},
+			Named = 
+			{
+				string Name = "Door030",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 135.497, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 69,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame031",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d606:Happiness_HotelRedux.DoorFrame031",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 70,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor004",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 135.074, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d60e:Happiness_HotelRedux.ExitDoor004",
+				Vec4 Color = [0.905, 0.3801, 0.3801, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 71,
+			},
+			Named = 
+			{
+				string Name = "Door031",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 152.846, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 72,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame032",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d610:Happiness_HotelRedux.DoorFrame032",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 73,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor005",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 152.423, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d613:Happiness_HotelRedux.ExitDoor005",
+				Vec4 Color = [0.905, 0.3801, 0.3801, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 74,
+			},
+			Named = 
+			{
+				string Name = "Door032",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 61.8897, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 75,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame033",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d616:Happiness_HotelRedux.DoorFrame033",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 76,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor006",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 61.4667, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d618:Happiness_HotelRedux.ExitDoor006",
+				Vec4 Color = [0.905, 0.3801, 0.3801, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 77,
+			},
+			Named = 
+			{
+				string Name = "Door033",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 44.0683, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 78,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame034",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d61b:Happiness_HotelRedux.DoorFrame034",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 79,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor007",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 43.6453, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d61e:Happiness_HotelRedux.ExitDoor007",
+				Vec4 Color = [0.905, 0.3801, 0.3801, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 80,
+			},
+			Named = 
+			{
+				string Name = "Door034",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 24.9324, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 81,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame035",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d621:Happiness_HotelRedux.DoorFrame035",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 82,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor008",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 24.5094, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d623:Happiness_HotelRedux.ExitDoor008",
+				Vec4 Color = [0.905, 0.3801, 0.3801, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 83,
+			},
+			Named = 
+			{
+				string Name = "Door035",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.0609, 6.86439, 4.85384],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [-0, -0.707107, 0, 0.707107],
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 84,
+					},
+					Named = 
+					{
+						string Name = "DoorFrame036",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-3.63988, -6, -0.191574],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0.5, 0.5, 0.5, 0.5],
+					},
+					Model = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						string MaterialName = "546ad78e43adbf81:mat_Default",
+						string MeshName = "546bbed1f9e3d626:Happiness_HotelRedux.DoorFrame036",
+						Vec4 Color = [1, 0.76, 0.76, 1],
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 85,
+			},
+			Named = 
+			{
+				string Name = "ExitDoor009",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [50.259, 6.44141, 4.61571],
+				Vec3 Scale = [0.913215, 0.123851, 0.0535715],
+				Quat Rotation = [0.5, -0.5, 0.5, 0.5],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "546bbed1f9e3d628:Happiness_HotelRedux.ExitDoor009",
+				Vec4 Color = [0.73, 0.73, 0.73, 1],
+			},
+		},
+	},
+},

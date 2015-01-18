@@ -14,15 +14,25 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [20.261, 4.62055, -3.95273],
+		Vec3 Translation = [69.1666, -3.01435, -4.36539],
 		Vec3 Scale = [1.5, 1.5, 0.5],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	IndicatorManager = 
 	{
-		CogPath Elevator = "",
+		CogPath Elevator = ":/BlueElevator",
 		Vec4 NumberColor = [1, 0.95, 0.8, 1],
+		Vec4 SelectionColor = [0.1, 0.1, 1, 1],
 		int CurrentFloor = 1,
+	},
+	SoundEmitter = 
+	{
+		bool StartPlaying = false,
+		int ExtraPriority = 0,
+		string CueName = "546b1d7ca1e57564:ElevatorDing",
+		float Volume = 1,
+		float Pitch = 1,
+		bool Positional = true,
 	},
 	Hierarchy = 
 	{
@@ -38,7 +48,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -63,7 +73,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -88,7 +98,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -113,7 +123,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -138,7 +148,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -163,7 +173,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -188,7 +198,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -213,7 +223,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -238,7 +248,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -263,7 +273,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -288,7 +298,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -313,7 +323,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.0471889, -0.0172115],
+				Vec3 Translation = [0, 0.0952968, 0.665063],
 				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0.707107, 0, 0, 0.707107],
 			},
@@ -324,6 +334,53 @@ Cog =
 				string MaterialName = "546b06909863cf75:mat_Light",
 				string MeshName = "546b0732ab397ad7:LightIndicator.LightR",
 				Vec4 Color = [0, 0, 0, 1],
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 14,
+			},
+			Named = 
+			{
+				string Name = "BackDrop",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-0.0348434, 0.29507, 0.263228],
+				Vec3 Scale = [4.05149, 1.01859, 1.07761],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Model = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				string MaterialName = "546ad78e43adbf81:mat_Default",
+				string MeshName = "4de0354322b345ae:Cube",
+				Vec4 Color = [1, 1, 1, 1],
+			},
+			RigidBody = 
+			{
+				bool Static = false,
+				bool Asleep = false,
+				bool Kinematic = true,
+				bool RotationLocked = false,
+				bool Mode2D = false,
+				bool AllowSleep = true,
+				bool Inherit2DMode = true,
+				Vec3 Velocity = [0, 0, 0],
+				Vec3 AngularVelocity = [0, 0, 0],
+			},
+			BoxCollider = 
+			{
+				bool Ghost = false,
+				bool SendsMessages = true,
+				bool Seamless = true,
+				string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+				string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+				Vec3 Offset = [0, 0, 0],
+				Vec3 Size = [0.5, 0.5, 0.5],
 			},
 		},
 	},

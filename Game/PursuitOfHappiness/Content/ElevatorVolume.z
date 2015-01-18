@@ -28,7 +28,7 @@ class ElevatorVolume : ZilchComponent
             }
             else
             {
-                this.LevelSettings.ContextText.SetString("Press Space to Enter Elevator.");
+                this.LevelSettings.ContextText.SetString("Press Space to Get In Elevator.");
             }
         }
     }
@@ -48,10 +48,10 @@ class ElevatorVolume : ZilchComponent
             {
                 if(this.TextStarted == false)
                 {
-                    this.LevelSettings.ContextText.SetString("Press Space to Enter Elevator.");
+                    this.LevelSettings.ContextText.SetString("Press Space to Get In Elevator.");
                     this.TextStarted = true;
                 }
-                if(Zero.Keyboard.KeyIsPressed(Keys.Space))
+                if(Zero.Keyboard.KeyIsPressed(Keys.Space) && this.Player.PlayerController.InElevator == false)
                 {
                     Console.WriteLine("Enter Elevator");
                     this.Player.PlayerController.NearestElevator = this.Elevator.Cog;
@@ -60,7 +60,7 @@ class ElevatorVolume : ZilchComponent
                     this.TextStarted = false;
                 }
             }
-            if(Zero.Keyboard.KeyIsPressed(Keys.Space))
+            if(Zero.Keyboard.KeyIsPressed(Keys.Space)  && this.Player.PlayerController.InElevator == false )
             {
                 if(this.Doors.Cog.DoorManager.Open == false)
                 {

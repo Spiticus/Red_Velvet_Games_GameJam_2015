@@ -2,6 +2,7 @@ class ElevatorBehavior : ZilchComponent
 {
     [Property]
     var CurrentFloor:Integer = 1;
+    [Property]
     var DestinationFloor:Integer = 1;
     var SelectFloor:Integer = 1;
     [Property]
@@ -19,9 +20,11 @@ class ElevatorBehavior : ZilchComponent
     var CurrentDoor:Cog = null;
     var ElevatorMoving:Boolean = false;
     var FirstUpdate:Boolean = true;
+    var LocatorMode:Boolean = true;
     var Player:Cog = null;
     function Initialize(init : CogInitializer)
     {
+        this.SelectFloor = this.DestinationFloor;
         this.Player = this.Space.FindObjectByName("Player");
         this.InitTrans = this.Owner.Transform.WorldTranslation;
         this.StartTrans = this.Owner.Transform.WorldTranslation;
@@ -32,8 +35,18 @@ class ElevatorBehavior : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        if(this.FirstUpdate)
+        {
+            this.GotoFloorInstant(this.DestinationFloor);
+        }
+        
+        if(this.Player.PlayerController.InElevator && this.Player.PlayerController.NearestElevator == this.Owner)
+        {
+            this.Player.PlayerController.CurrentFloor = this.CurrentFloor;
+            
+        }
         //Floor Selection
-        if(this.Player.PlayerController.InElevator && this.ElevatorMoving == false)
+        if(this.Player.PlayerController.InElevator && this.ElevatorMoving == false && this.Player.PlayerController.NearestElevator == this.Owner)
         {
             if(this.SelectFloor == this.CurrentFloor)
             {
@@ -41,6 +54,10 @@ class ElevatorBehavior : ZilchComponent
                 if(this.SelectFloor > this.MaxFloor)
                 {
                     this.SelectFloor = this.MinFloor;
+                }
+                if(this.SelectFloor < this.MinFloor)
+                {
+                    this.SelectFloor = this.MaxFloor;
                 }
             }
             if(Zero.Keyboard.KeyIsPressed(Keys.Right) || Zero.Keyboard.KeyIsPressed(Keys.Up))
@@ -73,11 +90,8 @@ class ElevatorBehavior : ZilchComponent
             }
         }
         
-        if(this.FirstUpdate)
-        {
-            this.GotoFloorInstant(5);
-        }
-        if(this.ElevatorMoving)
+
+        if(this.ElevatorMoving && this.LocatorMode == false)
         {
             this.Owner.SoundEmitter.Volume = Math.Lerp(this.Owner.SoundEmitter.Volume, 1.0 , event.Dt * 2.0);
             this.Owner.SoundEmitter.Pitch = Math.Lerp(this.Owner.SoundEmitter.Pitch, 1.0 , event.Dt * 2.0);
@@ -145,12 +159,10 @@ class ElevatorBehavior : ZilchComponent
             Action.Call(seqA, this.CurrentDoor.DoorManager.DoorClose);
         }
         Action.Property(seqA, @this.ElevatorMoving, true, 0.0, Ease.Linear);
-        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, -0.2, 0), 0.2, Ease.QuadIn);
-        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, 0.2, 0), 0.1, Ease.QuadOut);
         Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(0, (this.DestinationFloor + this.FloorOffset)  * this.FloorHeight, 0), 0.1 * Math.Abs((this.DestinationFloor + this.FloorOffset) - this.CurrentFloor), Ease.Linear);
         Action.Property(seqA, @this.StartTrans, this.Owner.Transform.WorldTranslation, 0.01, Ease.Linear);
         Action.Property(seqA, @this.ElevatorMoving, false, 0.0, Ease.Linear);
-
+        Action.Property(seqA, @this.LocatorMode, false, 0.0, Ease.Linear);
         //Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, 0.2, 0), 0.2, Ease.QuadIn);
         //Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, -0.2, 0), 0.1, Ease.QuadOut);
         
