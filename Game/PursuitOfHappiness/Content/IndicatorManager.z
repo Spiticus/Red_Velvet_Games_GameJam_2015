@@ -1,0 +1,232 @@
+class IndicatorManager : ZilchComponent
+{
+    [Property]
+    var Elevator:CogPath = null;
+    [Property]
+    var NumberColor:Real4 = Real4(1,0.95,0.8,1);
+    [Property]
+    var SelectionColor:Real4 = Real4(0.1,0.1,1.0,1);
+    [Property]
+    var CurrentFloor:Integer = 1;
+    var PreviousFloor:Integer = 1;
+    var PreviousSelection:Integer = 1;
+    var FirstDing:Boolean = true;
+    var Player:Cog = null;
+    
+    var LightB:Cog = null;
+    var Light1:Cog = null;
+    var Light2:Cog = null;
+    var Light3:Cog = null;
+    var Light4:Cog = null;
+    var Light5:Cog = null;
+    var Light6:Cog = null;
+    var Light7:Cog = null;
+    var Light8:Cog = null;
+    var Light9:Cog = null;
+    var Light10:Cog = null;
+    var LightR:Cog = null;
+    function Initialize(init : CogInitializer)
+    {
+        this.Player = this.Space.FindObjectByName("Player");
+        this.LightB = this.Owner.FindChildByName("LightB");
+        this.Light1 = this.Owner.FindChildByName("Light1");
+        this.Light2 = this.Owner.FindChildByName("Light2");
+        this.Light3 = this.Owner.FindChildByName("Light3");
+        this.Light4 = this.Owner.FindChildByName("Light4");
+        this.Light5 = this.Owner.FindChildByName("Light5");
+        this.Light6 = this.Owner.FindChildByName("Light6");
+        this.Light7 = this.Owner.FindChildByName("Light7");
+        this.Light8 = this.Owner.FindChildByName("Light8");
+        this.Light9 = this.Owner.FindChildByName("Light9");
+        this.Light10 = this.Owner.FindChildByName("Light10");
+        this.LightR = this.Owner.FindChildByName("LightR");
+        
+        
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var selectionMode:Boolean = this.Player.PlayerController.InElevator == true && this.Elevator.Cog.ElevatorBehavior.ElevatorMoving == false;
+        this.CurrentFloor = this.Elevator.Cog.ElevatorBehavior.CurrentFloor;
+        /*if(Zero.Keyboard.KeyIsPressed(Keys.PageUp))
+        {
+            this.CurrentFloor += 1;
+        }
+        if(Zero.Keyboard.KeyIsPressed(Keys.PageDown))
+        {
+            this.CurrentFloor -= 1;
+        }
+        */
+        //Floor Basement
+        if(this.CurrentFloor == 0)
+        {
+            this.LightB.Model.Color = Math.Lerp(this.LightB.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 0 && selectionMode)
+        {
+            this.LightB.Model.Color = Math.Lerp(this.LightB.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.LightB.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 1
+        if(this.CurrentFloor == 1)
+        {
+            this.Light1.Model.Color = Math.Lerp(this.Light1.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 1 && selectionMode)
+        {
+            this.Light1.Model.Color = Math.Lerp(this.Light1.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light1.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 2
+        if(this.CurrentFloor == 2)
+        {
+            this.Light2.Model.Color = Math.Lerp(this.Light2.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 2 && selectionMode)
+        {
+            this.Light2.Model.Color = Math.Lerp(this.Light2.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light2.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 3
+        if(this.CurrentFloor == 3)
+        {
+            this.Light3.Model.Color = Math.Lerp(this.Light3.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 3 && selectionMode)
+        {
+            this.Light3.Model.Color = Math.Lerp(this.Light3.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light3.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 4
+        if(this.CurrentFloor == 4)
+        {
+            this.Light4.Model.Color = Math.Lerp(this.Light4.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 4 && selectionMode)
+        {
+            this.Light4.Model.Color = Math.Lerp(this.Light4.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light4.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 5
+        if(this.CurrentFloor == 5)
+        {
+            this.Light5.Model.Color = Math.Lerp(this.Light5.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 5 && selectionMode)
+        {
+            this.Light5.Model.Color = Math.Lerp(this.Light5.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light5.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 6
+        if(this.CurrentFloor == 6)
+        {
+            this.Light6.Model.Color = Math.Lerp(this.Light6.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 6 && selectionMode)
+        {
+            this.Light6.Model.Color = Math.Lerp(this.Light6.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light6.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 7
+        if(this.CurrentFloor == 7)
+        {
+            this.Light7.Model.Color = Math.Lerp(this.Light7.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 7 && selectionMode)
+        {
+            this.Light7.Model.Color = Math.Lerp(this.Light7.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light7.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 8
+        if(this.CurrentFloor == 8)
+        {
+            this.Light8.Model.Color = Math.Lerp(this.Light8.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 8 && selectionMode)
+        {
+            this.Light8.Model.Color = Math.Lerp(this.Light8.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light8.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 9
+        if(this.CurrentFloor == 9)
+        {
+            this.Light9.Model.Color = Math.Lerp(this.Light9.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 9 && selectionMode)
+        {
+            this.Light9.Model.Color = Math.Lerp(this.Light9.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light9.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor 10
+        if(this.CurrentFloor == 10)
+        {
+            this.Light10.Model.Color = Math.Lerp(this.Light10.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 10 && selectionMode)
+        {
+            this.Light10.Model.Color = Math.Lerp(this.Light10.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.Light10.Model.Color = Real4(0,0,0,1);
+        }
+        //Floor Roof
+        if(this.CurrentFloor == 11)
+        {
+            this.LightR.Model.Color = Math.Lerp(this.LightR.Model.Color, this.NumberColor, event.Dt * 2.0);
+        }
+        else if(this.Elevator.Cog.ElevatorBehavior.SelectFloor == 11 && selectionMode)
+        {
+            this.LightR.Model.Color = Math.Lerp(this.LightR.Model.Color, this.SelectionColor, event.Dt * 2.0);
+        }
+        else
+        {
+            this.LightR.Model.Color = Real4(0,0,0,1);
+        }
+        
+        
+        if(this.PreviousFloor != this.CurrentFloor)
+        {
+            if(this.FirstDing == false)
+            {
+                this.Owner.SoundEmitter.Pitch = 1.0 + ((this.CurrentFloor as Real) * 0.02);
+                this.Owner.SoundEmitter.Play();
+            }
+            this.FirstDing = false;
+            
+        }
+        this.PreviousFloor = this.CurrentFloor;
+        this.PreviousSelection = this.Elevator.Cog.ElevatorBehavior.SelectFloor;
+    }
+}

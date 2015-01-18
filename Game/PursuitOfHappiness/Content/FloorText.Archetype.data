@@ -1,0 +1,51 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "FloorText",
+	},
+	Archetyped = 
+	{
+		string Name = "546b0b1111bca3b7:HUDText",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [16.2525, 8.44713, 0],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	SpriteText = 
+	{
+		bool Visible = true,
+		bool VisibilityCulling = true,
+		Vec4 Color = [1, 1, 1, 1],
+		BlendMode BlendMode = Alpha,
+		SpriteGeometryMode GeometryMode = ZPlane,
+		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		TextPositionMode Position = Centered,
+		string FontName = "546b359c95d9ec98:motrg___",
+		uint FontSize = 80,
+		string Text = "F1",
+		bool OnTop = true,
+		Vec2 Size = [0, 0],
+		TextAlign Align = Center,
+		float PixelsPerUnit = 37,
+		bool Smoothing = true,
+	},
+	Outliner = 
+	{
+		int ShadowCount = 16,
+		float SpreadPercent = 5,
+		Vec2 KnobOffsetPercent = [0, 0],
+		float ShadowDepth = -0.5,
+		float OffsetAngle = -45,
+		bool MatchOpacity = true,
+		Vec4 Color = [0.09, 0.00045, 0.00045, 0.96],
+		string KnobArchetype = "4de020863e84941e:Transform",
+		string TextArchetype = "1f33806740421259:SpriteText",
+	},
+},

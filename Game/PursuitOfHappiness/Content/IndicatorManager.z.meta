@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "IndicatorManager",
+		uint64 ResourceId = 546b065b70a733d2,
+	},
+},

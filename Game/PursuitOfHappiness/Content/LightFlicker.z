@@ -10,8 +10,12 @@ class LightFlicker : ZilchComponent
         var random = new Random();
         if(random.DieRoll(3) > 1)
         {
-            if(random.DieRoll(10) > 8)
+            if(random.DieRoll(20) > 15)
             {
+                if(random.DieRoll(3) > 1)
+                {
+                    this.Space.SoundSpace.PlayCueAt(SoundCue.Find("ElecArc"), this.Owner.Transform.WorldTranslation);
+                }
                 this.Owner.Light.Visible = !this.Owner.Light.Visible;
             }
         }

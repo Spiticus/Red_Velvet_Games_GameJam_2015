@@ -1,0 +1,73 @@
+GeometryContent = 
+{
+	GeneratedArchetype = 
+	{
+		uint64 ResourceId = 546b0733ab4dc794,
+	},
+	GeometryImport = 
+	{
+		bool ChangeWinding = false,
+		Vec3 Translation = [0, 0, 0],
+		Quat Rotation = [0, 0, 0, 1],
+		Vec3 Scale = [0.1, 0.1, 0.1],
+	},
+	MeshBuilder = 
+	{
+		Array Meshes = 
+		[
+			{
+				string Name = "LightIndicator.LightB",
+				uint64 ResourceId = 546b0732ab397abd,
+			},
+			{
+				string Name = "LightIndicator.Light1",
+				uint64 ResourceId = 546b0732ab397ac3,
+			},
+			{
+				string Name = "LightIndicator.Light2",
+				uint64 ResourceId = 546b0732ab397ac4,
+			},
+			{
+				string Name = "LightIndicator.Light3",
+				uint64 ResourceId = 546b0732ab397ac6,
+			},
+			{
+				string Name = "LightIndicator.Light4",
+				uint64 ResourceId = 546b0732ab397ac8,
+			},
+			{
+				string Name = "LightIndicator.Light5",
+				uint64 ResourceId = 546b0732ab397aca,
+			},
+			{
+				string Name = "LightIndicator.Light6",
+				uint64 ResourceId = 546b0732ab397acc,
+			},
+			{
+				string Name = "LightIndicator.Light7",
+				uint64 ResourceId = 546b0732ab397acd,
+			},
+			{
+				string Name = "LightIndicator.Light8",
+				uint64 ResourceId = 546b0732ab397acf,
+			},
+			{
+				string Name = "LightIndicator.Light9",
+				uint64 ResourceId = 546b0732ab397ad1,
+			},
+			{
+				string Name = "LightIndicator.Light10",
+				uint64 ResourceId = 546b0732ab397ad5,
+			},
+			{
+				string Name = "LightIndicator.LightR",
+				uint64 ResourceId = 546b0732ab397ad7,
+			},
+		],
+		MeshMode MeshMode = Multi,
+		ResourceCompression CompressMesh = None,
+		Generation Normals = Import,
+		Generation Tangents = Import,
+		float SmoothingAngle = 60,
+	},
+},

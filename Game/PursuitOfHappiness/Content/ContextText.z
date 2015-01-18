@@ -7,18 +7,37 @@ class ContextText : ZilchComponent
     var Builder:StringBuilder = null;
     [Property]
     var Particle:Archetype = null;
+    var InitTrans:Real3 = Real3(0,0,0);
     function Initialize(init : CogInitializer)
     {
         this.Builder = new StringBuilder();
         this.HUDTextObject = this.Owner.HudCreator.HudSpace.FindObjectByName("HUDText");
+        this.InitTrans = this.HUDTextObject.Transform.WorldTranslation;
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        this.Hide();
     }
     function SetString(newString : String)
     {
+        // Create an Action Sequence attach to this object
+        var seqA = Action.Sequence(this.Owner.Actions);
+        var seqB = Action.Sequence(this.Owner.Actions);
+        // FadeOut
+        Action.Property(seqA, @this.HUDTextObject.Transform.WorldTranslation, this.InitTrans, 0.1, Ease.QuadOut);
+        Action.Property(seqB, @this.HUDTextObject.SpriteText.Color, Real4(1,1,1,1), 0.1, Ease.QuadOut);
         this.StrPos = 0;
         this.DisplayString = "";
         this.Builder = new StringBuilder();
         this.ContextString = newString;
+        
+    }
+    function Hide()
+    {
+        // Create an Action Sequence attach to this object
+        var seqA = Action.Sequence(this.Owner.Actions);
+        var seqB = Action.Sequence(this.Owner.Actions);
+        // FadeOut
+        Action.Property(seqA, @this.HUDTextObject.Transform.WorldTranslation, this.InitTrans + Real3(0,-2,0), 0.5, Ease.QuadOut);
+        Action.Property(seqB, @this.HUDTextObject.SpriteText.Color, Real4(0,0,0,0), 0.5, Ease.QuadOut);
         
     }
     function OnLogicUpdate(event : UpdateEvent)

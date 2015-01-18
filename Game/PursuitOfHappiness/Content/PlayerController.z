@@ -1,0 +1,81 @@
+class PlayerController : ZilchComponent
+{
+    [Property]
+    var CurrentFloor:Integer = 1;
+    var HUDFloorObject:Cog = null;
+    var RideElevator:Boolean = false;
+    var InElevator:Boolean = false;
+    var Cutscene:Boolean = false;
+    var Health:Real = 100;
+    var InitTrans:Real3 = Real3(0,0,0);
+    var StartTrans:Real3 = Real3(0,0,0);
+    var NearestElevator:Cog = null;
+    var NearestDoor:Cog = null;
+    function Initialize(init : CogInitializer)
+    {
+        this.HUDFloorObject = this.LevelSettings.HudCreator.HudSpace.FindObjectByName("FloorText");
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        //Use Elevator
+        if(this.InElevator && Zero.Keyboard.KeyIsPressed(Keys.Enter))
+        {
+            this.UseElevator();
+        }
+        //Exit Elevator
+        if(this.InElevator && Zero.Keyboard.KeyIsPressed(Keys.Space))
+        {
+            this.NearestDoor.DoorManager.DoorOpenExit();
+        }
+        this.HUDFloorObject.SpriteText.Text = "F`this.CurrentFloor`";
+        if(this.Health < 100)
+        {
+            this.Health += 1.0;
+        }
+    }
+    function EnterElevator()
+    {
+        this.NearestElevator.ElevatorBehavior.StartTrans = this.NearestElevator.Transform.WorldTranslation;
+        this.StartTrans = this.Owner.Transform.WorldTranslation;
+        var seqA = Action.Sequence(this.Owner.Actions);
+        Action.Property(seqA, @this.Cutscene, true, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.NearestElevator.Transform.WorldTranslation + Real3(0, 1, -2), 1.0, Ease.Linear);
+        Action.Call(seqA, this.NearestDoor.DoorManager.DoorClose);
+        Action.Property(seqA, @this.InElevator, true, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.Cutscene, false, 0.0, Ease.Linear);
+        Action.Call(seqA, this.SelectAFloorText);
+    }
+    function ExitElevator()
+    {
+        this.NearestElevator.ElevatorBehavior.StartTrans = this.NearestElevator.Transform.WorldTranslation;
+        this.StartTrans = this.Owner.Transform.WorldTranslation;
+        var seqA = Action.Sequence(this.Owner.Actions);
+        Action.Property(seqA, @this.Cutscene, true, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.NearestElevator.Transform.WorldTranslation + Real3(0, 1, 11.29063), 1.0, Ease.Linear);
+        Action.Property(seqA, @this.InElevator, false, 0.0, Ease.Linear);
+        Action.Call(seqA, this.NearestDoor.DoorManager.DoorClose);
+        Action.Property(seqA, @this.Cutscene, false, 0.0, Ease.Linear);
+    }
+    function AbortElevator()
+    {
+        this.NearestElevator.ElevatorBehavior.StartTrans = this.NearestElevator.Transform.WorldTranslation;
+        this.StartTrans = this.Owner.Transform.WorldTranslation;
+        var seqA = Action.Sequence(this.Owner.Actions);
+        Action.Property(seqA, @this.Cutscene, true, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.NearestElevator.Transform.WorldTranslation + Real3(0, 1, 11.29063), 1.0, Ease.Linear);
+        Action.Property(seqA, @this.InElevator, false, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.Cutscene, false, 0.0, Ease.Linear);
+    }
+    function UseElevator()
+    {
+        this.NearestElevator.ElevatorBehavior.GotoFloor(this.NearestElevator.ElevatorBehavior.SelectFloor);
+    }
+    function SelectAFloorText()
+    {
+        Console.WriteLine("Choose a Floor.");
+        this.LevelSettings.ContextText.SetString("Choose a Floor with the Arrow Keys. \n Then Press Enter");
+        
+    }
+}

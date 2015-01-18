@@ -1,16 +1,38 @@
 class CameraController : ZilchComponent
 {
     var Target:Cog = null;
+    var Player:Cog = null;
     var ShakeOffset:Real3 = Real3(0,0,0);
+    var ZoomLerp:Real = 20;
     function Initialize(init : CogInitializer)
     {
-        this.Target = this.Space.FindObjectByName("Player");
+        this.Player = this.Space.FindObjectByName("Player");
+        this.Target = this.Player;
+        
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        var wantedPos:Real3 = this.Target.Transform.WorldTranslation + this.ShakeOffset + Real3(0,7,20);
+        this.ShakeOffset *= Real3(0.9,0.9,0.9);
+        var wantedPos:Real3 = this.Target.Transform.WorldTranslation + this.ShakeOffset + Real3(0,7,this.ZoomLerp);
+        var wantedZoom:Real = 20;
+        if(this.Player.PlayerController.InElevator && this.Player.PlayerController.NearestElevator.ElevatorBehavior.ElevatorMoving == false)
+        {
+            wantedPos = this.Target.Transform.WorldTranslation + this.ShakeOffset + Real3(0,4,this.ZoomLerp);
+        }
+        if(this.Player.PlayerController.InElevator && this.Player.PlayerController.NearestElevator.ElevatorBehavior.ElevatorMoving == true)
+        {
+            wantedZoom = 30;
+            wantedPos = this.Target.Transform.WorldTranslation + this.ShakeOffset + Real3(0,4,this.ZoomLerp);
+        }
+        this.ZoomLerp = Math.Lerp(this.ZoomLerp, wantedZoom, event.Dt);
         this.Owner.Transform.WorldTranslation = Math.Lerp(this.Owner.Transform.WorldTranslation, wantedPos, event.Dt * 4.0);
+    }
+    
+    function CameraShake(amount : Real)
+    {
+        var random = new Random();
+        this.ShakeOffset = Real3(random.Range(-amount,amount),random.Range(-amount,amount),random.Range(-amount,amount));
     }
 }

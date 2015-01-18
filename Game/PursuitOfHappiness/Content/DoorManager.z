@@ -1,0 +1,96 @@
+class DoorManager : ZilchComponent
+{
+    [Property]
+    var Volume:CogPath = null;
+    var Player:Cog = null;
+    var ChildDoor:Cog = null;
+    var Timer:Integer = 0;
+    var InitTrans:Real3 = Real3(0,0,0);
+    var InitTransChild:Real3 = Real3(0,0,0);
+    var Open:Boolean = false;
+    function Initialize(init : CogInitializer)
+    {
+        this.Player = this.Space.FindObjectByName("Player");
+        this.ChildDoor = this.Owner.FindChildByName("DoorChild");
+        this.InitTrans = this.Owner.Transform.WorldTranslation;
+        this.InitTransChild = this.ChildDoor.Transform.WorldTranslation;
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+    /*if(Zero.Keyboard.KeyIsPressed(Keys.O))
+        {
+            if(!this.Open)
+            {
+                this.DoorOpen();
+            }
+            else
+            {
+                this.DoorClose();
+            }
+        }
+    */
+        this.Timer += 1;
+    }
+    
+    function DoorOpen()
+    {
+        if(!this.Open)
+        {
+            // Create an Action Sequence attach to this object
+            var seqA = Action.Sequence(this.Owner.Actions);
+            var seqB = Action.Sequence(this.Owner.Actions);
+            var seqC = Action.Sequence(this.Owner.Actions);
+            // OpenDoor
+            this.Space.SoundSpace.PlayCueAt(SoundCue.Find("DoorOpen"), this.Owner.Transform.WorldTranslation);
+            Action.Delay(seqC, 0.33);
+            Action.Call(seqC, this.Owner.SoundEmitter.Play);
+            Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(-3, 0, 0), 1.0, Ease.Linear);
+            Action.Property(seqB, @this.ChildDoor.Transform.WorldTranslation, this.InitTransChild + Real3(-6, 0, 0), 1.0, Ease.Linear);
+            Action.Property(seqB, @this.Open, true, 0.0, Ease.Linear);
+            Action.Property(seqB, @this.Volume.Cog.ElevatorVolume.ElevatorArrived, true, 0.0, Ease.Linear);
+        }
+    }
+    function DoorOpenExit()
+    {
+        if(!this.Open)
+        {
+            // Create an Action Sequence attach to this object
+            var seqA = Action.Sequence(this.Owner.Actions);
+            var seqB = Action.Sequence(this.Owner.Actions);
+            var seqC = Action.Sequence(this.Owner.Actions);
+            // OpenDoor
+            this.Space.SoundSpace.PlayCueAt(SoundCue.Find("DoorOpen"), this.Owner.Transform.WorldTranslation);
+            Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(-3, 0, 0), 1.0, Ease.Linear);
+            Action.Property(seqB, @this.ChildDoor.Transform.WorldTranslation, this.InitTransChild + Real3(-6, 0, 0), 1.0, Ease.Linear);
+            Action.Property(seqB, @this.Open, true, 0.0, Ease.Linear);
+            Action.Property(seqB, @this.Volume.Cog.ElevatorVolume.ElevatorArrived, true, 0.0, Ease.Linear);
+            Action.Call(seqB, this.Player.PlayerController.AbortElevator);
+        }
+    }
+    function DoorClose()
+    {
+        if(this.Open)
+        {
+            // Create an Action Sequence attach to this object
+            var seqA = Action.Sequence(this.Owner.Actions);
+            var seqB = Action.Sequence(this.Owner.Actions);
+            // OpenDoor
+            Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans, 1.0, Ease.Linear);
+            Action.Property(seqB, @this.Volume.Cog.ElevatorVolume.ElevatorArrived, false, 0.0, Ease.Linear);
+            Action.Call(seqB, this.PlaySoundCue);
+            Action.Property(seqB, @this.ChildDoor.Transform.WorldTranslation, this.InitTransChild, 1.0, Ease.Linear);
+            Action.Property(seqB, @this.Open, false, 0.0, Ease.Linear);
+            if(this.Player.PlayerController.Cutscene == true)
+            {
+                Action.Property(seqB, @this.Player.PlayerController.Cutscene, false, 0.0, Ease.Linear);
+            }
+            
+        }
+    }
+    function PlaySoundCue()
+    {
+        this.Space.SoundSpace.PlayCueAt(SoundCue.Find("DoorClose"),this.Owner.Transform.WorldTranslation);
+    }
+}

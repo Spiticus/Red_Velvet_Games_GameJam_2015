@@ -1,0 +1,158 @@
+class ElevatorBehavior : ZilchComponent
+{
+    [Property]
+    var CurrentFloor:Integer = 1;
+    var DestinationFloor:Integer = 1;
+    var SelectFloor:Integer = 1;
+    [Property]
+    var MaxFloor:Integer = 7;
+    [Property]
+    var MinFloor:Integer = 0;
+    [Property]
+    var FloorHeight:Real = 10.0;
+    [Property]
+    var Speed:Real = 10.0;
+    [Property]
+    var FloorOffset:Integer = 0;
+    var InitTrans:Real3 = Real3(0,0,0);
+    var StartTrans:Real3 = Real3(0,0,0);
+    var CurrentDoor:Cog = null;
+    var ElevatorMoving:Boolean = false;
+    var FirstUpdate:Boolean = true;
+    var Player:Cog = null;
+    function Initialize(init : CogInitializer)
+    {
+        this.Player = this.Space.FindObjectByName("Player");
+        this.InitTrans = this.Owner.Transform.WorldTranslation;
+        this.StartTrans = this.Owner.Transform.WorldTranslation;
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        //Floor Selection
+        if(this.Player.PlayerController.InElevator && this.ElevatorMoving == false)
+        {
+            if(this.SelectFloor == this.CurrentFloor)
+            {
+                this.SelectFloor += 1;
+                if(this.SelectFloor > this.MaxFloor)
+                {
+                    this.SelectFloor = this.MinFloor;
+                }
+            }
+            if(Zero.Keyboard.KeyIsPressed(Keys.Right) || Zero.Keyboard.KeyIsPressed(Keys.Up))
+            {
+                this.SelectFloor += 1;
+                if(this.SelectFloor == this.CurrentFloor)
+                {
+                    this.SelectFloor += 1;
+                }
+                Console.WriteLine("DebugFloor Set to `this.SelectFloor`");
+                this.Space.SoundSpace.PlayCue(SoundCue.Find("Select_B_01"));
+                if(this.SelectFloor > this.MaxFloor)
+                {
+                    this.SelectFloor = this.MinFloor;
+                }
+            }
+            if(Zero.Keyboard.KeyIsPressed(Keys.Left) || Zero.Keyboard.KeyIsPressed(Keys.Down))
+            {
+                this.SelectFloor -= 1;
+                if(this.SelectFloor == this.CurrentFloor)
+                {
+                    this.SelectFloor -= 1;
+                }
+                Console.WriteLine("DebugFloor Set to `this.SelectFloor`");
+                this.Space.SoundSpace.PlayCue(SoundCue.Find("Select_B_01"));
+                if(this.SelectFloor < this.MinFloor)
+                {
+                    this.SelectFloor = this.MaxFloor;
+                }
+            }
+        }
+        
+        if(this.FirstUpdate)
+        {
+            this.GotoFloorInstant(5);
+        }
+        if(this.ElevatorMoving)
+        {
+            this.Owner.SoundEmitter.Volume = Math.Lerp(this.Owner.SoundEmitter.Volume, 1.0 , event.Dt * 2.0);
+            this.Owner.SoundEmitter.Pitch = Math.Lerp(this.Owner.SoundEmitter.Pitch, 1.0 , event.Dt * 2.0);
+            if(this.Player.PlayerController.InElevator)
+            {
+                this.LevelSettings.CameraViewport.Camera.CameraController.CameraShake(1.0);
+            }
+            else
+            {
+                this.LevelSettings.CameraViewport.Camera.CameraController.CameraShake(0.3);
+            }
+        }
+        else
+        {
+            this.Owner.SoundEmitter.Volume = Math.Lerp(this.Owner.SoundEmitter.Volume, 0.0 , event.Dt * 2.0);
+            this.Owner.SoundEmitter.Pitch = Math.Lerp(this.Owner.SoundEmitter.Pitch, 0.0 , event.Dt * 2.0);
+        }
+        this.FirstUpdate = false;
+    }
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(event.OtherObject.ElevatorVolume != null)
+        {
+            this.CurrentDoor = event.OtherObject.ElevatorVolume.Doors.Cog;
+            this.CurrentFloor = event.OtherObject.ElevatorVolume.CurrentFloor;
+            if(this.DestinationFloor == event.OtherObject.ElevatorVolume.CurrentFloor)
+            {
+                var seqA = Action.Sequence(this.Owner.Actions);
+                Action.Call(seqA, this.CurrentDoor.DoorManager.DoorOpen);
+            }
+        }
+    }
+    function GotoFloor(floor : Integer)
+    {
+        this.DestinationFloor = floor;
+        this.StartTrans = this.Owner.Transform.WorldTranslation;
+        var seqA = Action.Sequence(this.Owner.Actions);
+        if(this.CurrentDoor != null && this.CurrentDoor.DoorManager.Open)
+        {
+            Action.Call(seqA, this.CurrentDoor.DoorManager.DoorClose);
+        }
+        Action.Property(seqA, @this.ElevatorMoving, true, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, -0.2, 0), 0.2, Ease.QuadIn);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, 0.2, 0), 0.1, Ease.QuadOut);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(0, (this.DestinationFloor + this.FloorOffset)  * this.FloorHeight, 0), 1.0 * Math.Abs((this.DestinationFloor + this.FloorOffset) - this.CurrentFloor), Ease.QuadOut);
+        Action.Property(seqA, @this.StartTrans, this.Owner.Transform.WorldTranslation, 0.01, Ease.Linear);
+        Action.Property(seqA, @this.ElevatorMoving, false, 0.0, Ease.Linear);
+        if(this.Player.PlayerController.InElevator)
+        {
+            Action.Call(seqA, this.Player.PlayerController.ExitElevator);
+        }
+        
+
+        //Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, 0.2, 0), 0.2, Ease.QuadIn);
+        //Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, -0.2, 0), 0.1, Ease.QuadOut);
+        
+    }
+    function GotoFloorInstant(floor : Integer)
+    {
+        this.DestinationFloor = floor;
+        this.StartTrans = this.Owner.Transform.WorldTranslation;
+        var seqA = Action.Sequence(this.Owner.Actions);
+        if(this.CurrentDoor != null && this.CurrentDoor.DoorManager.Open)
+        {
+            Action.Call(seqA, this.CurrentDoor.DoorManager.DoorClose);
+        }
+        Action.Property(seqA, @this.ElevatorMoving, true, 0.0, Ease.Linear);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, -0.2, 0), 0.2, Ease.QuadIn);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, 0.2, 0), 0.1, Ease.QuadOut);
+        Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.InitTrans + Real3(0, (this.DestinationFloor + this.FloorOffset)  * this.FloorHeight, 0), 0.1 * Math.Abs((this.DestinationFloor + this.FloorOffset) - this.CurrentFloor), Ease.Linear);
+        Action.Property(seqA, @this.StartTrans, this.Owner.Transform.WorldTranslation, 0.01, Ease.Linear);
+        Action.Property(seqA, @this.ElevatorMoving, false, 0.0, Ease.Linear);
+
+        //Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, 0.2, 0), 0.2, Ease.QuadIn);
+        //Action.Property(seqA, @this.Owner.Transform.WorldTranslation, this.StartTrans + Real3(0, -0.2, 0), 0.1, Ease.QuadOut);
+        
+    }
+}
